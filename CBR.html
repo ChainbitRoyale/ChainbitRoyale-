@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chainbit Royale - A Next-Generation Battle Royale Ecosystem</title>
+    
+<script src="https://cdn.tailwindcss.com"></script>
+    
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap">
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            /* --- EDIT YOUR GLOBAL COLORS HERE --- */
+            --neon-blue: #00d4ff; /* Current Blue: Cyan/Electric Blue */
+            --neon-pink: #ff00c8; /* Current Pink: Magenta/Hot Pink */
+            /* --- END GLOBAL COLOR EDIT --- */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000; /* Pure Black Background */
+        }
+        .text-neon-blue {
+            color: var(--neon-blue);
+        }
+        .text-neon-pink {
+            color: var(--neon-pink);
+        }
+        .neon-shadow-blue {
+            text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
+        }
+        .neon-border-blue {
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 5px var(--neon-blue);
+        }
+        .neon-btn {
+            background-color: var(--neon-blue);
+            box-shadow: 0 0 10px var(--neon-blue);
+            transition: all 0.3s ease;
+        }
+        .neon-btn:hover {
+            box-shadow: 0 0 15px var(--neon-blue), 0 0 20px var(--neon-blue);
+            background-color: #00e9ff;
+        }
+        .gradient-bg {
+            /* Kept a subtle gradient for card contrast against black */
+            background: linear-gradient(135deg, #111827, #030712); 
+        }
+        
+        /* New Split Card Effect
+         * Applies a subtle initial border, and a dramatic split glow on hover.
+         */
+        .split-card-effect {
+            /* Default subtle border for definition */
+            border: 2px solid #374151; /* Tailwind gray-700 */
+            transition: all 0.3s ease;
+        }
+
+        .split-card-effect:hover {
+            /* Remove the solid border on hover so only the glow remains visible */
+            border-color: transparent; 
+            /* Stacked box-shadow for split color effect */
+            box-shadow: 
+                /* Pink Glow Layer: Shifts to the left */
+                -6px 0 15px var(--neon-pink),
+                /* Blue Glow Layer: Shifts to the right */
+                6px 0 15px var(--neon-blue);
+        }
+        
+    </style>
+</head>
+<body class="text-gray-200 antialiased">
+
+    
+<header class="sticky top-0 z-50 bg-black/95 backdrop-blur-sm border-b border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            
+<a href="#" class="flex items-center">
+                <img src="https://i.ibb.co/JWHZ0db3/Gemini-Generated-Image-l7pskel7pskel7ps.jpg" alt="Chainbit Royale Logo" class="h-12 w-auto rounded-md shadow-lg neon-border-blue p-1" style="box-shadow: 0 0 8px var(--neon-blue);">
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#abstract" class="text-sm font-medium hover:text-neon-blue transition duration-200">Abstract</a>
+                <a href="#gameplay" class="text-sm font-medium hover:text-neon-blue transition duration-200">Gameplay</a>
+                <a href="#tokenomics" class="text-sm font-medium hover:text-neon-blue transition duration-200">Tokenomics</a>
+                <a href="#roadmap" class="text-sm font-medium hover:text-neon-blue transition duration-200">Roadmap</a>
+                
+<a href="#" class="text-sm font-medium text-gray-500 cursor-not-allowed">Marketplace (Coming Soon)</a>
+            </nav>
+            <a href="https://chainbitroyalewhitepaper.tiiny.site/" class="neon-btn text-gray-900 px-4 py-2 text-sm font-semibold rounded-lg shadow-lg">Whitepaper (PDF)</a>
+        </div>
+    </header>
+
+    
+<section class="relative h-screen flex items-center justify-center text-center p-4 overflow-hidden bg-black">
+        
+        <div class="z-20 max-w-4xl flex flex-col items-center">
+            <h2 class="text-6xl md:text-8xl font-black mb-4 tracking-tighter text-white">
+                <span class="text-neon-blue neon-shadow-blue">CHAINBIT</span> 
+                <span class="text-neon-pink" style="text-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink);">ROYALE</span>
+            </h2>
+            
+<img src="https://i.ibb.co/JWHZ0db3/Gemini-Generated-Image-l7pskel7pskel7ps.jpg" alt="Chainbit Royale Logo" class="w-48 h-auto mb-8 rounded-lg shadow-2xl neon-border-blue p-2" style="box-shadow: 0 0 15px var(--neon-blue), 0 0 25px var(--neon-blue);">
+            
+            <p class="text-lg md:text-2xl text-gray-400 mb-8 font-light max-w-2xl mx-auto">
+                The Next-Generation Battle Royale. True Asset Ownership. Play-to-Earn.
+            </p>
+            
+            <!-- BUTTONS: Arranged in two rows, stacked vertically -->
+            <div class="flex flex-col items-center gap-4 w-full max-w-lg mx-auto"> 
+                
+                <!-- Row 1: Gameplay and Tokenomics (Side-by-side on desktop, stacked on mobile) -->
+                <div class="flex flex-col sm:flex-row justify-center gap-4 w-full">
+                    <!-- Secondary CTA: Explore Gameplay -->
+                    <a href="#gameplay" class="px-8 py-3 text-lg font-bold rounded-xl border-2 border-neon-blue text-neon-blue hover:bg-neon-blue/20 transition duration-300 transform hover:scale-105 w-full text-center sm:w-auto">Explore Gameplay</a>
+
+                    <!-- Third CTA: View Tokenomics -->
+                    <a href="#tokenomics" class="px-8 py-3 text-lg font-bold rounded-xl border-2 border-neon-blue text-neon-blue hover:bg-neon-blue/20 transition duration-300 transform hover:scale-105 w-full text-center sm:w-auto">View Tokenomics</a>
+                </div>
+                
+                <!-- Row 2: Telegram button (Full width on mobile, controlled width on desktop) -->
+                <a href="https://t.me/ChainbitRoyale" target="_blank" class="neon-btn text-gray-900 px-8 py-3 text-lg font-bold rounded-xl shadow-lg transform hover:scale-105 w-full sm:w-80 md:w-96 text-center">Join Our Telegram Group</a>
+            </div>
+        </div>
+    </section>
+
+    
+<section id="abstract" class="py-20 bg-gray-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                <div>
+                    <h3 class="text-sm font-semibold uppercase tracking-widest text-neon-pink mb-2">The Problem</h3>
+                    <h2 class="text-4xl font-bold text-white mb-6">Why Traditional Gaming Fails Players.</h2>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        Players invest countless hours and financial resources into in-game items, yet possess **no real ownership**. These assets are locked to centralized accounts, cannot be freely traded, and hold no value outside the game’s ecosystem. This model benefits the platform, not the player.
+                    </p>
+                    <a href="#solution" class="text-neon-blue font-semibold hover:text-neon-pink transition duration-200 flex items-center">
+                        Discover the Chainbit Solution 
+                        <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+                <div id="solution" class="gradient-bg p-8 rounded-2xl border border-neon-blue/30 shadow-2xl">
+                    <h3 class="text-sm font-semibold uppercase tracking-widest text-neon-blue mb-2">The Solution</h3>
+                    <h2 class="text-3xl font-bold text-white mb-4">True Asset Ownership.</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Chainbit Royale uses blockchain to transform every cosmetic item, skin, and outfit into a verifiable **NFTs**. This gives you full, uncensored control over your digital assets, allowing you to **own, trade, and monetize** them freely in our player-owned economy.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+<section id="gameplay" class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-sm font-semibold uppercase tracking-widest text-neon-blue neon-shadow-blue mb-2">Core Mechanics</h3>
+            <h2 class="4xl font-bold text-white mb-12">Play-to-Earn Tournaments in Fracture</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+<!-- Card 1 with Split Glow Hover Effect -->
+<div class="gradient-bg p-8 rounded-2xl split-card-effect transition duration-300 transform hover:scale-[1.02]">
+                    <i class="fas fa-trophy text-4xl text-neon-pink mb-4 neon-shadow-blue"></i>
+                    <h4 class="text-xl font-semibold text-white mb-3">Variable Stakes</h4>
+                    <p class="text-gray-400">
+                        Enter tournaments by paying a fee in **CBR** token. We offer **different stake games to accommodate every player’s investment level**, from casual matches to high-stakes contests.
+                    </p>
+                </div>
+                
+<!-- Card 2 with Split Glow Hover Effect -->
+<div class="gradient-bg p-8 rounded-2xl split-card-effect transition duration-300 transform hover:scale-[1.02]">
+                    <i class="fas fa-hand-holding-usd text-4xl text-neon-pink mb-4 neon-shadow-blue"></i>
+                    <h4 class="text-xl font-semibold text-white mb-3">Self-Sustaining Economy</h4>
+                    <p class="text-gray-400">
+                        A **minimal percentage** of the entry fee pool is automatically deducted for team funding and operational costs, ensuring the long-term health of the game.
+                    </p>
+                </div>
+                
+<!-- Card 3 with Split Glow Hover Effect -->
+<div class="gradient-bg p-8 rounded-2xl split-card-effect transition duration-300 transform hover:scale-[1.02]">
+                    <i class="fas fa-chart-line text-4xl text-neon-pink mb-4 neon-shadow-blue"></i>
+                    <h4 class="text-xl font-semibold text-white mb-3">Instant Payout</h4>
+                    <p class="text-gray-400">
+                        The **overwhelming majority** of the collected fee pool is instantly and verifiably distributed to the tournament winner(s) via smart contract execution.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+<section id="tokenomics" class="py-20 bg-gray-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-sm font-semibold uppercase tracking-widest text-neon-blue neon-shadow-blue mb-2 text-center">CBR Token Utility</h3>
+            <h2 class="text-4xl font-bold text-white mb-12 text-center">Tokenomics: Sustainable Supply</h2>
+
+            <div class="flex flex-col lg:flex-row gap-12">
+                
+<!-- Allocation Card with Split Glow Hover Effect -->
+<div class="lg:w-1/2">
+                    <h4 class="text-2xl font-semibold text-white mb-4 border-b border-gray-800 pb-2">CBR Allocation (Total Supply: 1 Billion)</h4>
+                    <div class="bg-gray-900 p-6 rounded-xl split-card-effect">
+                        <ul class="space-y-4">
+                            
+<li class="flex justify-between items-center pb-2 border-b border-gray-800 last:border-b-0">
+                                <span class="flex items-center text-lg text-neon-blue font-medium"><i class="fas fa-fire-alt mr-3"></i>DEX Liquidity Pool</span>
+                                <span class="text-2xl font-bold text-white">50%</span>
+                            </li>
+                            
+<li class="flex justify-between items-center pb-2 border-b border-gray-800 last:border-b-0">
+                                <span class="flex items-center text-lg text-neon-pink font-medium"><i class="fas fa-lock mr-3"></i>Future Staking Pools</span>
+                                <span class="text-2xl font-bold text-white">30%</span> 
+                            </li>
+                            
+<li class="flex justify-between items-center pb-2 border-b border-gray-800 last:border-b-0">
+                                <span class="flex items-center text-lg text-gray-400 font-medium"><i class="fas fa-database mr-3"></i>Treasury Reserves</span>
+                                <span class="text-2xl font-bold text-white">10%</span>
+                            </li>
+                            
+<li class="flex justify-between items-center">
+                                <span class="flex items-center text-lg text-gray-400 font-medium"><i class="fas fa-code mr-3"></i>Development</span>
+                                <span class="text-2xl font-bold text-white">10%</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                
+<div class="lg:w-1/2">
+                    <h4 class="text-2xl font-semibold text-white mb-4 border-b border-gray-800 pb-2">Temporary Transaction Tax</h4>
+                    <div class="gradient-bg p-6 rounded-xl border border-neon-pink/30 shadow-2xl">
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                            A **3.00% tax** is currently applied to all **buy and sell transactions** on Decentralized Exchanges (DEXs) until the game's official release.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-400 space-y-2 mb-6">
+                            <li><span class="text-neon-blue font-semibold">Purpose:</span> Funding initial development, marketing, and audits.</li>
+                            <li><span class="text-neon-blue font-semibold">Wallets/P2P:</span> Transfers between standard wallets are **tax-free**.</li>
+                        </ul>
+                        <div class="p-3 bg-red-900/40 rounded-lg border border-red-700/50">
+                            <i class="fas fa-exclamation-triangle text-red-500 mr-2"></i>
+                            <span class="font-bold text-white">Post-Launch Policy:</span> Once Chainbit Royale officially launches (Phase 4), the transaction tax will be set to **0%** to encourage full utility.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+<section id="roadmap" class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-sm font-semibold uppercase tracking-widest text-neon-pink mb-2 text-center">Future Vision</h3>
+            <h2 class="4xl font-bold text-white mb-12 text-center">Development Roadmap</h2>
+            
+            
+            <div class="relative max-w-4xl mx-auto">
+                
+<div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-900 hidden md:block"></div>
+
+                
+<div class="flex flex-col md:flex-row justify-start items-center mb-12 md:relative">
+                    <div class="md:w-1/2 md:pr-12 md:text-right">
+                        <h4 class="text-2xl font-bold text-neon-blue">Phase 1: Foundation</h4>
+                        <p class="text-gray-400">Concept finalization, core blockchain integration, and initial art asset creation.</p>
+                    </div>
+                    <div class="absolute md:static w-3 h-3 bg-neon-blue rounded-full border-2 border-black md:left-1/2 md:transform md:-translate-x-1/2 md:top-0"></div>
+                </div>
+
+                
+
+<div class="flex justify-center my-8 md:my-12 md:w-1/2 md:ml-auto md:mr-0 md:justify-start">
+                    <div class="w-3/4 max-w-xs md:max-w-[180px] md:pl-4">
+                        <img src="https://i.ibb.co/XkbMnc2K/Gemini-Generated-Image-vylc4rvylc4rvylc.jpg" 
+                             alt="Roadmap Separator Image" 
+                             class="w-full h-auto rounded-lg shadow-xl p-1" 
+                             style="border: none;" /* Removed border */
+                             onerror="this.onerror=null; this.src='https://placehold.co/300x150/0d131f/00d4ff?text=PHASE+SEPARATOR&font=Inter';"
+                        >
+                    </div>
+                </div>
+
+                
+<div class="flex flex-col md:flex-row justify-end items-center mb-12 md:relative">
+                    <div class="md:w-1/2 md:pl-12 md:text-left md:order-2">
+                        <h4 class="text-2xl font-bold text-neon-blue">Phase 2: Alpha Testing</h4>
+                        <p class="text-gray-400">Launch of closed alpha, rigorous testing of core gameplay loops and blockchain functionality.</p>
+                    </div>
+                    <div class="absolute md:static w-3 h-3 bg-neon-blue rounded-full border-2 border-black md:left-1/2 md:transform md:-translate-x-1/2 md:top-0 md:order-1"></div>
+                </div>
+
+                
+
+<div class="flex justify-center my-8 md:my-12 md:w-1/2 md:mr-auto md:ml-0 md:justify-end">
+                    <div class="w-3/4 max-w-xs md:max-w-[180px] md:pr-4">
+                        <img src="https://i.ibb.co/XkbMnc2K/Gemini-Generated-Image-vylc4rvylc4rvylc.jpg" 
+                             alt="Roadmap Separator Image" 
+                             class="w-full h-auto rounded-lg shadow-xl p-1" 
+                             style="border: none;" /* Removed border */
+                             onerror="this.onerror=null; this.src='https://placehold.co/300x150/0d131f/ff00c8?text=PHASE+SEPARATOR&font=Inter';"
+                        >
+                    </div>
+                </div>
+
+                
+<div class="flex flex-col md:flex-row justify-start items-center mb-12 md:relative">
+                    <div class="md:w-1/2 md:pr-12 md:text-right">
+                        <h4 class="text-2xl font-bold text-neon-pink">Phase 3: Public Beta & Token Launch</h4>
+                        <p class="text-gray-400">Public Beta release, **CBR** token launch, and opening of the in-game NFT marketplace.</p>
+                    </div>
+                    <div class="absolute md:static w-3 h-3 bg-neon-pink rounded-full border-2 border-black md:left-1/2 md:transform md:-translate-x-1/2 md:top-0"></div>
+                </div>
+
+                
+
+<div class="flex justify-center my-8 md:my-12 md:w-1/2 md:ml-auto md:mr-0 md:justify-start">
+                    <div class="w-3/4 max-w-xs md:max-w-[180px] md:pl-4">
+                        <img src="https://i.ibb.co/XkbMnc2K/Gemini-Generated-Image-vylc4rvylc4rvylc.jpg" 
+                             alt="Roadmap Separator Image" 
+                             class="w-full h-auto rounded-lg shadow-xl p-1" 
+                             style="border: none;" /* Removed border */
+                             onerror="this.onerror=null; this.src='https://placehold.co/300x150/0d131f/00d4ff?text=PHASE+SEPARATOR&font=Inter';"
+                        >
+                    </div>
+                </div>
+
+                
+<div class="flex flex-col md:flex-row justify-end items-center md:relative">
+                    <div class="md:w-1/2 md:pl-12 md:text-left md:order-2">
+                        <h4 class="text-2xl font-bold text-neon-pink">Phase 4: Full Launch & Expansion</h4>
+                        <p class="text-gray-400">Official full launch, competitive seasons begin, governance model introduced, and **transaction tax set to 0%**.</p>
+                    </div>
+                    <div class="absolute md:static w-3 h-3 bg-neon-pink rounded-full border-2 border-black md:left-1/2 md:transform md:-translate-x-1/2 md:top-0 md:order-1"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    
+<footer class="bg-gray-900 border-t border-gray-800 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400 text-sm mb-4">&copy; 2025 Chainbit Royale. All rights reserved. Empowering Gamers.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="https://t.me/ChainbitRoyale" class="text-gray-400 hover:text-neon-blue transition duration-200"><i class="fab fa-telegram-plane text-xl"></i></a>
+                <a href="https://x.com/chainbitroyale" class="text-gray-400 hover:text-neon-blue transition duration-200"><i class="fab fa-twitter text-xl"></i></a>
+                
+<a href="https://chainbitroyalewhitepaper.tiiny.site/" class="text-gray-400 hover:text-neon-blue transition duration-200"><i class="fas fa-book-open text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
