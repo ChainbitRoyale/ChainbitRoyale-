@@ -30,6 +30,9 @@
         .neon-shadow-blue {
             text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
         }
+        .neon-shadow-pink {
+            text-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink);
+        }
         .neon-border-blue {
             border-color: var(--neon-blue);
             box-shadow: 0 0 5px var(--neon-blue);
@@ -194,6 +197,35 @@
             <h3 class="text-sm font-semibold uppercase tracking-widest text-neon-blue neon-shadow-blue mb-2 text-center">CBR Token Utility</h3>
             <h2 class="text-4xl font-bold text-white mb-12 text-center">Tokenomics: Sustainable Supply</h2>
 
+            <!-- NEW CONTRACT ADDRESS CARD WITH COPY FUNCTIONALITY -->
+            <div class="mb-12">
+                <div class="bg-gray-900 p-6 rounded-2xl split-card-effect border border-neon-blue/30 shadow-2xl">
+                    <h4 class="text-xl font-semibold text-white mb-3 text-center">Official CBR Contract Address</h4>
+                    
+                    <div class="flex flex-col md:flex-row items-center justify-center space-y-3 md:space-y-0 md:space-x-4">
+                        
+                        <!-- Display Address -->
+                        <div id="contract-address-display"
+                             class="w-full md:w-auto flex-grow break-all bg-gray-950 text-neon-pink neon-border-blue border-2 p-3 rounded-xl text-sm font-mono cursor-pointer transition duration-150 ease-in-out hover:bg-gray-900/50"
+                             title="Click to copy address">
+                            0x6a745038a6b9f2b66348a37e16ef5f0e04eee5fb
+                        </div>
+
+                        <!-- Copy Button -->
+                        <button id="copy-button" 
+                                class="w-full md:w-auto flex-shrink-0 neon-btn text-gray-900 font-semibold py-3 px-6 text-sm rounded-xl transition duration-200 transform hover:scale-[1.02] active:scale-[0.98]">
+                            <i class="fas fa-copy mr-2"></i>
+                            Copy Address
+                        </button>
+                    </div>
+                    <!-- Success Message -->
+                    <div id="status-message" class="mt-3 text-center text-sm font-medium h-6">
+                        <!-- Message will appear here -->
+                    </div>
+                </div>
+            </div>
+            <!-- END CONTRACT ADDRESS CARD -->
+
             <div class="flex flex-col lg:flex-row gap-12">
                 
 <!-- Allocation Card with Split Glow Hover Effect -->
@@ -348,5 +380,88 @@
             </div>
         </div>
     </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- CONTRACT COPY FUNCTIONALITY START ---
+        const contractAddress = '0x6a745038a6b9f2b66348a37e16ef5f0e04eee5fb';
+        const copyButton = document.getElementById('copy-button');
+        const statusMessage = document.getElementById('status-message');
+        const addressDisplay = document.getElementById('contract-address-display');
+        
+        // Only proceed if the elements exist
+        if (copyButton && addressDisplay) {
+            // Set the event listener on the copy button
+            copyButton.addEventListener('click', () => copyToClipboard(contractAddress));
+
+            // Also allow clicking the address text itself to copy
+            addressDisplay.addEventListener('click', () => copyToClipboard(contractAddress));
+        }
+
+        /**
+         * Copies the given text to the clipboard using the execCommand fallback.
+         * @param {string} text The text to copy.
+         */
+        function copyToClipboard(text) {
+            // 1. Create a temporary textarea element
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            
+            // 2. Set styles to hide it but keep it focusable
+            textarea.style.position = 'fixed';
+            textarea.style.left = '-9999px';
+            textarea.style.top = '-9999px';
+            textarea.setAttribute('readonly', '');
+
+            // 3. Append to body, select the text, and attempt copy
+            document.body.appendChild(textarea);
+            textarea.select();
+            
+            let success = false;
+            try {
+                // document.execCommand('copy') is the reliable fallback in iframes
+                success = document.execCommand('copy');
+            } catch (err) {
+                console.error('Copy command failed:', err);
+            }
+            
+            // 4. Clean up the temporary element
+            document.body.removeChild(textarea);
+
+            // 5. Show status feedback
+            if (success) {
+                showStatus('Address Copied!', 'text-neon-pink neon-shadow-pink');
+            } else {
+                showStatus('Copy Failed: Please select and copy manually.', 'text-red-500 neon-shadow-pink');
+            }
+        }
+
+        /**
+         * Displays a status message temporarily.
+         * @param {string} message The message to show.
+         * @param {string} colorClass Tailwind class for color/shadow.
+         */
+        function showStatus(message, colorClass) {
+            if (!statusMessage) return; // Guard clause
+
+            // Clear any existing timeout
+            if (statusMessage.timeoutId) {
+                clearTimeout(statusMessage.timeoutId);
+            }
+
+            // Update content and class
+            statusMessage.textContent = message;
+            // The color class will now handle both color and neon shadow
+            statusMessage.className = `mt-3 text-center text-sm font-medium h-6 ${colorClass}`;
+            
+            // Set a new timeout to clear the message
+            statusMessage.timeoutId = setTimeout(() => {
+                statusMessage.textContent = '';
+                statusMessage.className = 'mt-3 text-center text-sm font-medium h-6'; // Reset classes
+            }, 2500);
+        }
+        // --- CONTRACT COPY FUNCTIONALITY END ---
+    });
+</script>
 </body>
 </html>
