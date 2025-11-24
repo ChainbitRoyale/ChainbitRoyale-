@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chainbit Royale - A Next-Generation Battle Royale Ecosystem</title>
     
-<script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap">
     
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
             /* --- EDIT YOUR GLOBAL COLORS HERE --- */
-            --neon-blue: #00d4ff; /* Current Blue: Cyan/Electric Blue */
-            --neon-pink: #ff00c8; /* Current Pink: Magenta/Hot Pink */
+            --neon-blue: #00d4ff; /* Cyan/Electric Blue */
+            --neon-pink: #ff00c8; /* Magenta/Hot Pink */
             /* --- END GLOBAL COLOR EDIT --- */
         }
         body {
@@ -33,10 +33,6 @@
         .neon-shadow-pink {
             text-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink);
         }
-        .neon-border-blue {
-            border-color: var(--neon-blue);
-            box-shadow: 0 0 5px var(--neon-blue);
-        }
         .neon-btn {
             background-color: var(--neon-blue);
             box-shadow: 0 0 10px var(--neon-blue);
@@ -47,21 +43,17 @@
             background-color: #00e9ff;
         }
         .gradient-bg {
-            /* Kept a subtle gradient for card contrast against black */
+            /* Subtle gradient for card contrast against black */
             background: linear-gradient(135deg, #111827, #030712); 
         }
         
-        /* New Split Card Effect
-         * Applies a subtle initial border, and a dramatic split glow on hover.
-         */
+        /* Split Card Effect - dramatic split glow on hover */
         .split-card-effect {
-            /* Default subtle border for definition */
             border: 2px solid #374151; /* Tailwind gray-700 */
             transition: all 0.3s ease;
         }
 
         .split-card-effect:hover {
-            /* Remove the solid border on hover so only the glow remains visible */
             border-color: transparent; 
             /* Stacked box-shadow for split color effect */
             box-shadow: 
@@ -70,32 +62,69 @@
                 /* Blue Glow Layer: Shifts to the right */
                 6px 0 15px var(--neon-blue);
         }
+
+        /* Roadmap specific styling for the timeline */
+        .timeline-item {
+            position: relative;
+            padding-bottom: 3rem; /* Spacing between items */
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 100%;
+            width: 2px;
+            background-color: #1f2937; /* Tailwind gray-800 */
+            z-index: 10;
+        }
+        
+        .timeline-item:last-child::after {
+            height: 50%; /* Stop the line halfway on the last item */
+        }
+        
+        /* Mobile adjustment: Move line to the left edge */
+        @media (max-width: 767px) {
+             .timeline-item::after {
+                left: 1rem;
+                transform: translateX(0);
+             }
+             .timeline-dot {
+                left: 1rem !important;
+                transform: translateX(-50%) !important;
+             }
+             .timeline-content {
+                margin-left: 3.5rem !important;
+                padding-left: 0 !important;
+                text-align: left !important;
+             }
+        }
         
     </style>
 </head>
 <body class="text-gray-200 antialiased">
 
-    
-<header class="sticky top-0 z-50 bg-black/95 backdrop-blur-sm border-b border-gray-900">
+    <!-- Header / Navigation --><header class="sticky top-0 z-50 bg-black/95 backdrop-blur-sm border-b border-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             
-<a href="#" class="flex items-center">
-                <img src="https://i.ibb.co/JWHZ0db3/Gemini-Generated-Image-l7pskel7pskel7ps.jpg" alt="Chainbit Royale Logo" class="h-12 w-auto rounded-md shadow-lg neon-border-blue p-1" style="box-shadow: 0 0 8px var(--neon-blue);">
+            <a href="#" class="flex items-center">
+                <img src="https://i.ibb.co/JWHZ0db3/Gemini-Generated-Image-l7pskel7pskel7ps.jpg" onerror="this.onerror=null; this.src='https://placehold.co/48x48/000000/00d4ff?text=CR&font=Inter';" alt="Chainbit Royale Logo" class="h-12 w-auto rounded-md shadow-lg neon-border-blue p-1" style="box-shadow: 0 0 8px var(--neon-blue);">
             </a>
             <nav class="hidden md:flex space-x-8">
                 <a href="#abstract" class="text-sm font-medium hover:text-neon-blue transition duration-200">Abstract</a>
                 <a href="#gameplay" class="text-sm font-medium hover:text-neon-blue transition duration-200">Gameplay</a>
                 <a href="#tokenomics" class="text-sm font-medium hover:text-neon-blue transition duration-200">Tokenomics</a>
                 <a href="#roadmap" class="text-sm font-medium hover:text-neon-blue transition duration-200">Roadmap</a>
-                
-<a href="#" class="text-sm font-medium text-gray-500 cursor-not-allowed">Marketplace (Coming Soon)</a>
+                <a href="#team" class="text-sm font-medium hover:text-neon-blue transition duration-200">Team</a>
+                <a href="#" class="text-sm font-medium text-gray-500 cursor-not-allowed">Marketplace (Coming Soon)</a>
             </nav>
-            <a href="https://chainbitroyalewhitepaper.tiiny.site/" class="neon-btn text-gray-900 px-4 py-2 text-sm font-semibold rounded-lg shadow-lg">Whitepaper (PDF)</a>
+            <a href="https://chainbitroyalewhitepaper.tiiny.site/" target="_blank" class="neon-btn text-gray-900 px-4 py-2 text-sm font-semibold rounded-lg shadow-lg">Whitepaper (PDF)</a>
         </div>
     </header>
 
-    
-<section class="relative h-screen flex items-center justify-center text-center p-4 overflow-hidden bg-black">
+    <!-- Hero Section --><section class="relative h-screen flex items-center justify-center text-center p-4 overflow-hidden bg-black">
         
         <div class="z-20 max-w-4xl flex flex-col items-center">
             <h2 class="text-6xl md:text-8xl font-black mb-4 tracking-tighter text-white">
@@ -103,32 +132,26 @@
                 <span class="text-neon-pink" style="text-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink);">ROYALE</span>
             </h2>
             
-<img src="https://i.ibb.co/JWHZ0db3/Gemini-Generated-Image-l7pskel7pskel7ps.jpg" alt="Chainbit Royale Logo" class="w-48 h-auto mb-8 rounded-lg shadow-2xl neon-border-blue p-2" style="box-shadow: 0 0 15px var(--neon-blue), 0 0 25px var(--neon-blue);">
+            <img src="https://i.ibb.co/JWHZ0db3/Gemini-Generated-Image-l7pskel7pskel7ps.jpg" onerror="this.onerror=null; this.src='https://placehold.co/192x192/000000/00d4ff?text=CR&font=Inter';" alt="Chainbit Royale Logo" class="w-48 h-auto mb-8 rounded-lg shadow-2xl p-2" style="border: 2px solid var(--neon-blue); box-shadow: 0 0 15px var(--neon-blue), 0 0 25px var(--neon-blue);">
             
             <p class="text-lg md:text-2xl text-gray-400 mb-8 font-light max-w-2xl mx-auto">
                 The Next-Generation Battle Royale. True Asset Ownership. Play-to-Earn.
             </p>
             
-            <!-- BUTTONS: Arranged in two rows, stacked vertically -->
-            <div class="flex flex-col items-center gap-4 w-full max-w-lg mx-auto"> 
+            <!-- CTA Buttons --><div class="flex flex-col items-center gap-4 w-full max-w-lg mx-auto"> 
                 
-                <!-- Row 1: Gameplay and Tokenomics (Side-by-side on desktop, stacked on mobile) -->
                 <div class="flex flex-col sm:flex-row justify-center gap-4 w-full">
-                    <!-- Secondary CTA: Explore Gameplay -->
-                    <a href="#gameplay" class="px-8 py-3 text-lg font-bold rounded-xl border-2 border-neon-blue text-neon-blue hover:bg-neon-blue/20 transition duration-300 transform hover:scale-105 w-full text-center sm:w-auto">Explore Gameplay</a>
+                    <!-- Secondary CTA: Explore Gameplay --><a href="#gameplay" class="px-8 py-3 text-lg font-bold rounded-xl border-2 border-neon-blue text-neon-blue hover:bg-neon-blue/20 transition duration-300 transform hover:scale-105 w-full text-center sm:w-auto">Explore Gameplay</a>
 
-                    <!-- Third CTA: View Tokenomics -->
-                    <a href="#tokenomics" class="px-8 py-3 text-lg font-bold rounded-xl border-2 border-neon-blue text-neon-blue hover:bg-neon-blue/20 transition duration-300 transform hover:scale-105 w-full text-center sm:w-auto">View Tokenomics</a>
+                    <!-- Third CTA: View Tokenomics --><a href="#tokenomics" class="px-8 py-3 text-lg font-bold rounded-xl border-2 border-neon-blue text-neon-blue hover:bg-neon-blue/20 transition duration-300 transform hover:scale-105 w-full text-center sm:w-auto">View Tokenomics</a>
                 </div>
                 
-                <!-- Row 2: Telegram button (Full width on mobile, controlled width on desktop) -->
-                <a href="https://t.me/ChainbitRoyale" target="_blank" class="neon-btn text-gray-900 px-8 py-3 text-lg font-bold rounded-xl shadow-lg transform hover:scale-105 w-full sm:w-80 md:w-96 text-center">Join Our Telegram Group</a>
+                <!-- Row 2: Telegram button --><a href="https://t.me/ChainbitRoyale" target="_blank" class="neon-btn text-gray-900 px-8 py-3 text-lg font-bold rounded-xl shadow-lg transform hover:scale-105 w-full sm:w-80 md:w-96 text-center">Join Our Telegram Group</a>
             </div>
         </div>
     </section>
 
-    
-<section id="abstract" class="py-20 bg-gray-950">
+    <!-- Abstract Section --><section id="abstract" class="py-20 bg-gray-950">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                 <div>
@@ -146,23 +169,21 @@
                     <h3 class="text-sm font-semibold uppercase tracking-widest text-neon-blue mb-2">The Solution</h3>
                     <h2 class="text-3xl font-bold text-white mb-4">True Asset Ownership.</h2>
                     <p class="text-gray-400 leading-relaxed">
-                        Chainbit Royale uses blockchain to transform every cosmetic item, skin, and outfit into a verifiable **NFTs**. This gives you full, uncensored control over your digital assets, allowing you to **own, trade, and monetize** them freely in our player-owned economy.
+                        Chainbit Royale uses blockchain to transform every cosmetic item, skin, and outfit into verifiable **NFTs**. This gives you full, uncensored control over your digital assets, allowing you to **own, trade, and monetize** them freely in our player-owned economy.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    
-<section id="gameplay" class="py-20 bg-black">
+    <!-- Gameplay Section --><section id="gameplay" class="py-20 bg-black">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h3 class="text-sm font-semibold uppercase tracking-widest text-neon-blue neon-shadow-blue mb-2">Core Mechanics</h3>
             <h2 class="4xl font-bold text-white mb-12">Play-to-Earn Tournaments in Fracture</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
-<!-- Card 1 with Split Glow Hover Effect -->
-<div class="gradient-bg p-8 rounded-2xl split-card-effect transition duration-300 transform hover:scale-[1.02]">
+                <!-- Card 1: Variable Stakes --><div class="gradient-bg p-8 rounded-2xl split-card-effect transition duration-300 transform hover:scale-[1.02]">
                     <i class="fas fa-trophy text-4xl text-neon-pink mb-4 neon-shadow-blue"></i>
                     <h4 class="text-xl font-semibold text-white mb-3">Variable Stakes</h4>
                     <p class="text-gray-400">
@@ -170,8 +191,7 @@
                     </p>
                 </div>
                 
-<!-- Card 2 with Split Glow Hover Effect -->
-<div class="gradient-bg p-8 rounded-2xl split-card-effect transition duration-300 transform hover:scale-[1.02]">
+                <!-- Card 2: Self-Sustaining Economy --><div class="gradient-bg p-8 rounded-2xl split-card-effect transition duration-300 transform hover:scale-[1.02]">
                     <i class="fas fa-hand-holding-usd text-4xl text-neon-pink mb-4 neon-shadow-blue"></i>
                     <h4 class="text-xl font-semibold text-white mb-3">Self-Sustaining Economy</h4>
                     <p class="text-gray-400">
@@ -179,8 +199,7 @@
                     </p>
                 </div>
                 
-<!-- Card 3 with Split Glow Hover Effect -->
-<div class="gradient-bg p-8 rounded-2xl split-card-effect transition duration-300 transform hover:scale-[1.02]">
+                <!-- Card 3: Instant Payout --><div class="gradient-bg p-8 rounded-2xl split-card-effect transition duration-300 transform hover:scale-[1.02]">
                     <i class="fas fa-chart-line text-4xl text-neon-pink mb-4 neon-shadow-blue"></i>
                     <h4 class="text-xl font-semibold text-white mb-3">Instant Payout</h4>
                     <p class="text-gray-400">
@@ -191,65 +210,56 @@
         </div>
     </section>
 
-    
-<section id="tokenomics" class="py-20 bg-gray-950">
+    <!-- Tokenomics Section --><section id="tokenomics" class="py-20 bg-gray-950">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h3 class="text-sm font-semibold uppercase tracking-widest text-neon-blue neon-shadow-blue mb-2 text-center">CBR Token Utility</h3>
             <h2 class="text-4xl font-bold text-white mb-12 text-center">Tokenomics: Sustainable Supply</h2>
 
-            <!-- NEW CONTRACT ADDRESS CARD WITH COPY FUNCTIONALITY -->
-            <div class="mb-12">
+            <!-- CONTRACT ADDRESS CARD WITH COPY FUNCTIONALITY --><div class="mb-12">
                 <div class="bg-gray-900 p-6 rounded-2xl split-card-effect border border-neon-blue/30 shadow-2xl">
                     <h4 class="text-xl font-semibold text-white mb-3 text-center">Official CBR Contract Address</h4>
                     
                     <div class="flex flex-col md:flex-row items-center justify-center space-y-3 md:space-y-0 md:space-x-4">
                         
-                        <!-- Display Address - UPDATED FONT SIZE TO text-2xl -->
-                        <div id="contract-address-display"
+                        <!-- Display Address --><div id="contract-address-display"
                              class="w-full md:w-auto flex-grow break-all bg-gray-950 text-neon-pink neon-border-blue border-2 p-3 rounded-xl text-2xl font-mono cursor-pointer transition duration-150 ease-in-out hover:bg-gray-900/50"
                              title="Click to copy address">
                             0x6a745038a6b9f2b66348a37e16ef5f0e04eee5fb
                         </div>
 
-                        <!-- Copy Button -->
-                        <button id="copy-button" 
+                        <!-- Copy Button --><button id="copy-button" 
                                 class="w-full md:w-auto flex-shrink-0 neon-btn text-gray-900 font-semibold py-3 px-6 text-sm rounded-xl transition duration-200 transform hover:scale-[1.02] active:scale-[0.98]">
                             <i class="fas fa-copy mr-2"></i>
                             Copy Address
                         </button>
                     </div>
-                    <!-- Success Message -->
-                    <div id="status-message" class="mt-3 text-center text-sm font-medium h-6">
-                        <!-- Message will appear here -->
-                    </div>
+                    <!-- Success Message --><div id="status-message" class="mt-3 text-center text-sm font-medium h-6">
+                        <!-- Message will appear here --></div>
                 </div>
             </div>
-            <!-- END CONTRACT ADDRESS CARD -->
-
-            <div class="flex flex-col lg:flex-row gap-12">
+            <!-- END CONTRACT ADDRESS CARD --><div class="flex flex-col lg:flex-row gap-12">
                 
-<!-- Allocation Card with Split Glow Hover Effect -->
-<div class="lg:w-1/2">
+                <!-- Allocation Card --><div class="lg:w-1/2">
                     <h4 class="text-2xl font-semibold text-white mb-4 border-b border-gray-800 pb-2">CBR Allocation (Total Supply: 1 Billion)</h4>
                     <div class="bg-gray-900 p-6 rounded-xl split-card-effect">
                         <ul class="space-y-4">
                             
-<li class="flex justify-between items-center pb-2 border-b border-gray-800 last:border-b-0">
+                            <li class="flex justify-between items-center pb-2 border-b border-gray-800 last:border-b-0">
                                 <span class="flex items-center text-lg text-neon-blue font-medium"><i class="fas fa-fire-alt mr-3"></i>DEX Liquidity Pool</span>
                                 <span class="text-2xl font-bold text-white">50%</span>
                             </li>
                             
-<li class="flex justify-between items-center pb-2 border-b border-gray-800 last:border-b-0">
+                            <li class="flex justify-between items-center pb-2 border-b border-gray-800 last:border-b-0">
                                 <span class="flex items-center text-lg text-neon-pink font-medium"><i class="fas fa-lock mr-3"></i>Future Staking Pools</span>
                                 <span class="text-2xl font-bold text-white">30%</span> 
                             </li>
                             
-<li class="flex justify-between items-center pb-2 border-b border-gray-800 last:border-b-0">
+                            <li class="flex justify-between items-center pb-2 border-b border-gray-800 last:border-b-0">
                                 <span class="flex items-center text-lg text-gray-400 font-medium"><i class="fas fa-database mr-3"></i>Treasury Reserves</span>
                                 <span class="text-2xl font-bold text-white">10%</span>
                             </li>
                             
-<li class="flex justify-between items-center">
+                            <li class="flex justify-between items-center">
                                 <span class="flex items-center text-lg text-gray-400 font-medium"><i class="fas fa-code mr-3"></i>Development</span>
                                 <span class="text-2xl font-bold text-white">10%</span>
                             </li>
@@ -257,8 +267,7 @@
                     </div>
                 </div>
 
-                
-<div class="lg:w-1/2">
+                <!-- Transaction Tax Card --><div class="lg:w-1/2">
                     <h4 class="text-2xl font-semibold text-white mb-4 border-b border-gray-800 pb-2">Temporary Transaction Tax</h4>
                     <div class="gradient-bg p-6 rounded-xl border border-neon-pink/30 shadow-2xl">
                         <p class="text-gray-300 leading-relaxed mb-4">
@@ -278,105 +287,119 @@
         </div>
     </section>
 
-    
-<section id="roadmap" class="py-20 bg-black">
+    <!-- Roadmap Section (Updated Structure) --><section id="roadmap" class="py-20 bg-black">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h3 class="text-sm font-semibold uppercase tracking-widest text-neon-pink mb-2 text-center">Future Vision</h3>
             <h2 class="4xl font-bold text-white mb-12 text-center">Development Roadmap</h2>
             
-            
             <div class="relative max-w-4xl mx-auto">
-                
-<div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-900 hidden md:block"></div>
-
-                
-<div class="flex flex-col md:flex-row justify-start items-center mb-12 md:relative">
-                    <div class="md:w-1/2 md:pr-12 md:text-right">
+                <!-- The vertical timeline line is now handled by the ::after pseudo-element in CSS, 
+                     which is responsive and cleaner than a manually placed div. --><!-- Phase 1: Foundation (Right Side on Desktop, Standard on Mobile) --><div class="timeline-item flex flex-col md:flex-row justify-end items-start md:relative">
+                    <div class="timeline-content md:w-1/2 md:pl-12 md:text-left md:order-2 p-4 md:p-0">
                         <h4 class="text-2xl font-bold text-neon-blue">Phase 1: Foundation</h4>
                         <p class="text-gray-400">Concept finalization, core blockchain integration, and initial art asset creation.</p>
                     </div>
-                    <div class="absolute md:static w-3 h-3 bg-neon-blue rounded-full border-2 border-black md:left-1/2 md:transform md:-translate-x-1/2 md:top-0"></div>
+                    <!-- Timeline Dot --><div class="timeline-dot absolute w-5 h-5 bg-neon-blue rounded-full border-2 border-black left-0 top-1 md:left-1/2 md:transform md:-translate-x-1/2 md:top-4 z-20 shadow-md shadow-neon-blue"></div>
                 </div>
-
                 
-
-<div class="flex justify-center my-8 md:my-12 md:w-1/2 md:ml-auto md:mr-0 md:justify-start">
-                    <div class="w-3/4 max-w-xs md:max-w-[180px] md:pl-4">
-                        <img src="https://i.ibb.co/XkbMnc2K/Gemini-Generated-Image-vylc4rvylc4rvylc.jpg" 
-                             alt="Roadmap Separator Image" 
-                             class="w-full h-auto rounded-lg shadow-xl p-1" 
-                             style="border: none;" /* Removed border */
-                             onerror="this.onerror=null; this.src='https://placehold.co/300x150/0d131f/00d4ff?text=PHASE+SEPARATOR&font=Inter';"
-                        >
-                    </div>
-                </div>
-
-                
-<div class="flex flex-col md:flex-row justify-end items-center mb-12 md:relative">
-                    <div class="md:w-1/2 md:pl-12 md:text-left md:order-2">
+                <!-- Phase 2: Alpha Testing (Left Side on Desktop, Standard on Mobile) --><div class="timeline-item flex flex-col md:flex-row justify-start items-start md:relative">
+                    <div class="timeline-content md:w-1/2 md:pr-12 md:text-right p-4 md:p-0">
                         <h4 class="text-2xl font-bold text-neon-blue">Phase 2: Alpha Testing</h4>
                         <p class="text-gray-400">Launch of closed alpha, rigorous testing of core gameplay loops and blockchain functionality.</p>
                     </div>
-                    <div class="absolute md:static w-3 h-3 bg-neon-blue rounded-full border-2 border-black md:left-1/2 md:transform md:-translate-x-1/2 md:top-0 md:order-1"></div>
+                    <!-- Timeline Dot --><div class="timeline-dot absolute w-5 h-5 bg-neon-blue rounded-full border-2 border-black left-0 top-1 md:left-1/2 md:transform md:-translate-x-1/2 md:top-4 z-20 shadow-md shadow-neon-blue"></div>
                 </div>
-
                 
-
-<div class="flex justify-center my-8 md:my-12 md:w-1/2 md:mr-auto md:ml-0 md:justify-end">
-                    <div class="w-3/4 max-w-xs md:max-w-[180px] md:pr-4">
-                        <img src="https://i.ibb.co/XkbMnc2K/Gemini-Generated-Image-vylc4rvylc4rvylc.jpg" 
-                             alt="Roadmap Separator Image" 
-                             class="w-full h-auto rounded-lg shadow-xl p-1" 
-                             style="border: none;" /* Removed border */
-                             onerror="this.onerror=null; this.src='https://placehold.co/300x150/0d131f/ff00c8?text=PHASE+SEPARATOR&font=Inter';"
-                        >
-                    </div>
-                </div>
-
-                
-<div class="flex flex-col md:flex-row justify-start items-center mb-12 md:relative">
-                    <div class="md:w-1/2 md:pr-12 md:text-right">
+                <!-- Phase 3: Public Beta & Token Launch (Right Side on Desktop, Standard on Mobile) --><div class="timeline-item flex flex-col md:flex-row justify-end items-start md:relative">
+                    <div class="timeline-content md:w-1/2 md:pl-12 md:text-left md:order-2 p-4 md:p-0">
                         <h4 class="text-2xl font-bold text-neon-pink">Phase 3: Public Beta & Token Launch</h4>
                         <p class="text-gray-400">Public Beta release, **CBR** token launch, and opening of the in-game NFT marketplace.</p>
                     </div>
-                    <div class="absolute md:static w-3 h-3 bg-neon-pink rounded-full border-2 border-black md:left-1/2 md:transform md:-translate-x-1/2 md:top-0"></div>
+                    <!-- Timeline Dot --><div class="timeline-dot absolute w-5 h-5 bg-neon-pink rounded-full border-2 border-black left-0 top-1 md:left-1/2 md:transform md:-translate-x-1/2 md:top-4 z-20 shadow-md shadow-neon-pink"></div>
                 </div>
-
                 
-
-<div class="flex justify-center my-8 md:my-12 md:w-1/2 md:ml-auto md:mr-0 md:justify-start">
-                    <div class="w-3/4 max-w-xs md:max-w-[180px] md:pl-4">
-                        <img src="https://i.ibb.co/XkbMnc2K/Gemini-Generated-Image-vylc4rvylc4rvylc.jpg" 
-                             alt="Roadmap Separator Image" 
-                             class="w-full h-auto rounded-lg shadow-xl p-1" 
-                             style="border: none;" /* Removed border */
-                             onerror="this.onerror=null; this.src='https://placehold.co/300x150/0d131f/00d4ff?text=PHASE+SEPARATOR&font=Inter';"
-                        >
-                    </div>
-                </div>
-
-                
-<div class="flex flex-col md:flex-row justify-end items-center md:relative">
-                    <div class="md:w-1/2 md:pl-12 md:text-left md:order-2">
+                <!-- Phase 4: Full Launch & Expansion (Left Side on Desktop, Standard on Mobile) --><div class="timeline-item flex flex-col md:flex-row justify-start items-start md:relative">
+                    <div class="timeline-content md:w-1/2 md:pr-12 md:text-right p-4 md:p-0">
                         <h4 class="text-2xl font-bold text-neon-pink">Phase 4: Full Launch & Expansion</h4>
                         <p class="text-gray-400">Official full launch, competitive seasons begin, governance model introduced, and **transaction tax set to 0%**.</p>
                     </div>
-                    <div class="absolute md:static w-3 h-3 bg-neon-pink rounded-full border-2 border-black md:left-1/2 md:transform md:-translate-x-1/2 md:top-0 md:order-1"></div>
+                    <!-- Timeline Dot --><div class="timeline-dot absolute w-5 h-5 bg-neon-pink rounded-full border-2 border-black left-0 top-1 md:left-1/2 md:transform md:-translate-x-1/2 md:top-4 z-20 shadow-md shadow-neon-pink"></div>
                 </div>
-            </div>
 
+            </div>
+            
         </div>
     </section>
 
-    
-<footer class="bg-gray-900 border-t border-gray-800 py-8">
+    <!-- Team Section - NEW SECTION --><section id="team" class="py-20 bg-gray-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-sm font-semibold uppercase tracking-widest text-neon-blue neon-shadow-blue mb-2">The Architects of Chainbit</h3>
+            <h2 class="text-4xl font-bold text-white mb-12">Meet the Core Development Team</h2>
+            
+            <!-- Team Photo/Image (Adjusted to be smaller and centered) --><div class="mb-12 mx-auto max-w-xl rounded-xl overflow-hidden shadow-2xl border-2 border-neon-pink/50">
+                <img src="https://i.ibb.co/4ZP8gnGH/Chat-GPT-Image-Nov-23-2025-11-33-52-PM.jpg" 
+                     onerror="this.onerror=null; this.src='https://placehold.co/800x400/000000/ff00c8?text=Chainbit+Royale+Core+Team+Image+Missing&font=Inter';" 
+                     alt="Chainbit Royale Development Team" 
+                     class="w-full h-auto object-contain bg-black" 
+                     style="filter: brightness(0.8) contrast(1.2); transition: all 0.3s ease;">
+            </div>
+
+            <!-- Team Member List --><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+                
+                <!-- Team Member: Shadow --><div class="gradient-bg p-6 rounded-xl split-card-effect shadow-lg">
+                    <div class="text-3xl mb-2">🧑‍💻</div>
+                    <h4 class="text-xl font-bold text-neon-blue mb-1">Shadow</h4>
+                    <p class="text-sm font-semibold text-neon-pink mb-3">Project Lead</p>
+                    <p class="text-gray-400 text-sm">Coordinates development, roadmap and high-level strategy.</p>
+                </div>
+
+                <!-- Team Member: Gigacryptonian --><div class="gradient-bg p-6 rounded-xl split-card-effect shadow-lg">
+                    <div class="text-3xl mb-2">🤝</div>
+                    <h4 class="text-xl font-bold text-neon-blue mb-1">Gigacryptonian</h4>
+                    <p class="text-sm font-semibold text-neon-pink mb-3">Strategic Relations Manager & Community Lead</p>
+                    <p class="text-gray-400 text-sm">Manages partnerships, collaborations, community growth and user engagement.</p>
+                </div>
+
+                <!-- Team Member: Zeroframe --><div class="gradient-bg p-6 rounded-xl split-card-effect shadow-lg">
+                    <div class="text-3xl mb-2">🧬</div>
+                    <h4 class="text-xl font-bold text-neon-blue mb-1">Zeroframe</h4>
+                    <p class="text-sm font-semibold text-neon-pink mb-3">Lead Game Developer</p>
+                    <p class="text-gray-400 text-sm">Responsible for core game mechanics, weapon systems and gameplay logic.</p>
+                </div>
+
+                <!-- Team Member: Lena Void --><div class="gradient-bg p-6 rounded-xl split-card-effect shadow-lg">
+                    <div class="text-3xl mb-2">🎨</div>
+                    <h4 class="text-xl font-bold text-neon-blue mb-1">Lena Void</h4>
+                    <p class="text-sm font-semibold text-neon-pink mb-3">Art Director</p>
+                    <p class="text-gray-400 text-sm">Oversees visual identity, world design and character aesthetics.</p>
+                </div>
+
+                <!-- Team Member: Echo --><div class="gradient-bg p-6 rounded-xl split-card-effect shadow-lg">
+                    <div class="text-3xl mb-2">🎮</div>
+                    <h4 class="text-xl font-bold text-neon-blue mb-1">Echo</h4>
+                    <p class="text-sm font-semibold text-neon-pink mb-3">Gameplay Designer</p>
+                    <p class="text-gray-400 text-sm">Designs game flow, P2E systems, balancing and in-game experiences.</p>
+                </div>
+
+                <!-- Team Member: Chester --><div class="gradient-bg p-6 rounded-xl split-card-effect shadow-lg">
+                    <div class="text-3xl mb-2">🛠️</div>
+                    <h4 class="text-xl font-bold text-neon-blue mb-1">Chester</h4>
+                    <p class="text-sm font-semibold text-neon-pink mb-3">Backend Developer</p>
+                    <p class="text-gray-400 text-sm">Infrastructure, servers, blockchain integration and scaling.</p>
+                </div>
+                
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Footer --><footer class="bg-gray-900 border-t border-gray-800 py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p class="text-gray-400 text-sm mb-4">&copy; 2025 Chainbit Royale. All rights reserved. Empowering Gamers.</p>
             <div class="flex justify-center space-x-6">
-                <a href="https://t.me/ChainbitRoyale" class="text-gray-400 hover:text-neon-blue transition duration-200"><i class="fab fa-telegram-plane text-xl"></i></a>
-                <a href="https://x.com/chainbitroyale" class="text-gray-400 hover:text-neon-blue transition duration-200"><i class="fab fa-twitter text-xl"></i></a>
-                
-<a href="https://chainbitroyalewhitepaper.tiiny.site/" class="text-gray-400 hover:text-neon-blue transition duration-200"><i class="fas fa-book-open text-xl"></i></a>
+                <a href="https://t.me/ChainbitRoyale" target="_blank" class="text-gray-400 hover:text-neon-blue transition duration-200"><i class="fab fa-telegram-plane text-xl"></i></a>
+                <a href="https://x.com/chainbitroyale" target="_blank" class="text-gray-400 hover:text-neon-blue transition duration-200"><i class="fab fa-twitter text-xl"></i></a>
+                <a href="https://chainbitroyalewhitepaper.tiiny.site/" target="_blank" class="text-gray-400 hover:text-neon-blue transition duration-200"><i class="fas fa-book-open text-xl"></i></a>
             </div>
         </div>
     </footer>
@@ -407,61 +430,16 @@
             const textarea = document.createElement('textarea');
             textarea.value = text;
             
-            // 2. Set styles to hide it but keep it focusable
+            // 2. Set styles to hide it
             textarea.style.position = 'fixed';
-            textarea.style.left = '-9999px';
-            textarea.style.top = '-9999px';
-            textarea.setAttribute('readonly', '');
+            textarea.style.top = 0;
+            textarea.style.left = 0;
+            textarea.style.opacity = 0;
 
-            // 3. Append to body, select the text, and attempt copy
+            // 3. Append to body, select and copy
             document.body.appendChild(textarea);
+            textarea.focus();
             textarea.select();
-            
-            let success = false;
+
             try {
-                // document.execCommand('copy') is the reliable fallback in iframes
-                success = document.execCommand('copy');
-            } catch (err) {
-                console.error('Copy command failed:', err);
-            }
-            
-            // 4. Clean up the temporary element
-            document.body.removeChild(textarea);
-
-            // 5. Show status feedback
-            if (success) {
-                showStatus('Address Copied!', 'text-neon-pink neon-shadow-pink');
-            } else {
-                showStatus('Copy Failed: Please select and copy manually.', 'text-red-500 neon-shadow-pink');
-            }
-        }
-
-        /**
-         * Displays a status message temporarily.
-         * @param {string} message The message to show.
-         * @param {string} colorClass Tailwind class for color/shadow.
-         */
-        function showStatus(message, colorClass) {
-            if (!statusMessage) return; // Guard clause
-
-            // Clear any existing timeout
-            if (statusMessage.timeoutId) {
-                clearTimeout(statusMessage.timeoutId);
-            }
-
-            // Update content and class
-            statusMessage.textContent = message;
-            // The color class will now handle both color and neon shadow
-            statusMessage.className = `mt-3 text-center text-sm font-medium h-6 ${colorClass}`;
-            
-            // Set a new timeout to clear the message
-            statusMessage.timeoutId = setTimeout(() => {
-                statusMessage.textContent = '';
-                statusMessage.className = 'mt-3 text-center text-sm font-medium h-6'; // Reset classes
-            }, 2500);
-        }
-        // --- CONTRACT COPY FUNCTIONALITY END ---
-    });
-</script>
-</body>
-</html>
+                const successful = document
