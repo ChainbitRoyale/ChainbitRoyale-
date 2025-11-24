@@ -215,29 +215,117 @@
             <h3 class="text-sm font-semibold uppercase tracking-widest text-neon-blue neon-shadow-blue mb-2 text-center">CBR Token Utility</h3>
             <h2 class="text-4xl font-bold text-white mb-12 text-center">Tokenomics: Sustainable Supply</h2>
 
-            <!-- CONTRACT ADDRESS CARD WITH COPY FUNCTIONALITY --><div class="mb-12">
+            <!-- CONTRACT ADDRESS CARD WITH COPY FUNCTIONALITY -->
+            <div class="mb-12">
                 <div class="bg-gray-900 p-6 rounded-2xl split-card-effect border border-neon-blue/30 shadow-2xl">
                     <h4 class="text-xl font-semibold text-white mb-3 text-center">Official CBR Contract Address</h4>
                     
                     <div class="flex flex-col md:flex-row items-center justify-center space-y-3 md:space-y-0 md:space-x-4">
                         
-                        <!-- Display Address --><div id="contract-address-display"
-                             class="w-full md:w-auto flex-grow break-all bg-gray-950 text-neon-pink neon-border-blue border-2 p-3 rounded-xl text-2xl font-mono cursor-pointer transition duration-150 ease-in-out hover:bg-gray-900/50"
+                        <!-- Display Address -->
+                        <div id="contract-address-display"
+                             data-address="0x6a745038a6b9f2b66348a37e16ef5f0e04eee5fb"
+                             class="w-full md:w-auto flex-grow bg-gray-950 text-neon-pink neon-border-blue border-2 p-3 rounded-xl text-2xl font-mono cursor-pointer transition duration-150 ease-in-out hover:bg-gray-900/50 overflow-x-auto whitespace-nowrap"
                              title="Click to copy address">
                             0x6a745038a6b9f2b66348a37e16ef5f0e04eee5fb
                         </div>
 
-                        <!-- Copy Button --><button id="copy-button" 
-                                class="w-full md:w-auto flex-shrink-0 neon-btn text-gray-900 font-semibold py-3 px-6 text-sm rounded-xl transition duration-200 transform hover:scale-[1.02] active:scale-[0.98]">
+                        <!-- Copy Button -->
+                        <button id="copy-button" 
+                                class="w-full md:w-auto flex-shrink-0 neon-btn text-gray-900 font-semibold py-3 px-6 text-sm rounded-xl transition duration-200 transform hover:scale-[1.02] active:scale-[0.98]"
+                                data-address="0x6a745038a6b9f2b66348a37e16ef5f0e04eee5fb">
                             <i class="fas fa-copy mr-2"></i>
                             Copy Address
                         </button>
                     </div>
-                    <!-- Success Message --><div id="status-message" class="mt-3 text-center text-sm font-medium h-6">
-                        <!-- Message will appear here --></div>
                 </div>
             </div>
-            <!-- END CONTRACT ADDRESS CARD --><div class="flex flex-col lg:flex-row gap-12">
+            <!-- END CONTRACT ADDRESS CARD -->
+
+            <!-- Wallet Transparency Card (NEW DETAILED CONTENT) -->
+            <div class="mb-12">
+                <div class="bg-gray-900 p-8 rounded-2xl split-card-effect border border-neon-pink/30 shadow-2xl">
+                    
+                    <h4 class="text-2xl font-bold text-white mb-6 text-center text-neon-pink border-b border-gray-800 pb-3">
+                        <i class="fas fa-chart-pie mr-2"></i> CBR Token Allocation & Wallet Transparency
+                    </h4>
+                    
+                    <p class="text-gray-400 mb-6 text-center">
+                        Chainbit Royale maintains full transparency for all ecosystem-controlled wallets. Each allocation wallet is publicly verifiable and reserved strictly for its stated purpose.
+                    </p>
+
+                    <div class="space-y-8">
+                        
+                        <!-- Wallet 1: Staking & Community Rewards -->
+                        <div class="p-5 rounded-xl bg-black border border-neon-blue/40 hover:bg-gray-950 transition duration-300">
+                            <h5 class="text-xl font-semibold text-neon-blue mb-2 flex items-center">
+                                <i class="fas fa-gift mr-3"></i> Staking & Community Rewards — 30%
+                            </h5>
+                            
+                            <p class="text-gray-500 mb-2 text-sm">Wallet:</p>
+                            <div class="wallet-address-copy-container w-full mb-3">
+                                <span class="address-text w-full block text-lg font-mono text-white break-all cursor-pointer hover:text-neon-pink transition duration-150" 
+                                      data-address="0x7437c67AF93A9D1AD34d1F41a55191cE399F9052" 
+                                      title="Click to copy rewards address">
+                                    0x7437c67AF93A9D1AD34d1F41a55191cE399F9052
+                                </span>
+                            </div>
+                            
+                            <p class="text-gray-400 text-sm">
+                                This wallet holds tokens allocated for upcoming staking pools, gameplay rewards, tournaments, and community incentive programs. Tokens are released gradually according to program requirements and are not used for trading or liquidity movement.
+                            </p>
+                        </div>
+
+                        <!-- Wallet 2: Project Reserve -->
+                        <div class="p-5 rounded-xl bg-black border border-neon-blue/40 hover:bg-gray-950 transition duration-300">
+                            <h5 class="text-xl font-semibold text-neon-blue mb-2 flex items-center">
+                                <i class="fas fa-lock mr-3"></i> Project Reserve — 10%
+                            </h5>
+                            
+                            <p class="text-gray-500 mb-2 text-sm">Wallet:</p>
+                            <div class="wallet-address-copy-container w-full mb-3">
+                                <span class="address-text w-full block text-lg font-mono text-white break-all cursor-pointer hover:text-neon-pink transition duration-150" 
+                                      data-address="0x2abd9F8DcA3f238F7808284E4De9ae1666f8da18" 
+                                      title="Click to copy reserve address">
+                                    0x2abd9F8DcA3f238F7808284E4De9ae1666f8da18
+                                </span>
+                            </div>
+                            
+                            <p class="text-gray-400 text-sm">
+                                This treasury wallet supports long-term sustainability of the Chainbit Royale ecosystem. It serves as a non-circulating strategic reserve to ensure operational stability, emergency funding, and future initiative support. Tokens in this wallet are not used for trading or market activity.
+                            </p>
+                        </div>
+
+                        <!-- Wallet 3: Development Fund -->
+                        <div class="p-5 rounded-xl bg-black border border-neon-blue/40 hover:bg-gray-950 transition duration-300">
+                            <h5 class="text-xl font-semibold text-neon-blue mb-2 flex items-center">
+                                <i class="fas fa-code mr-3"></i> Development Fund — 10%
+                            </h5>
+                            
+                            <p class="text-gray-500 mb-2 text-sm">Wallet:</p>
+                            <div class="wallet-address-copy-container w-full mb-3">
+                                <span class="address-text w-full block text-lg font-mono text-white break-all cursor-pointer hover:text-neon-pink transition duration-150" 
+                                      data-address="0x61d959dF7A7601F09795C9Cfb5cEC0deEAd83Ed2" 
+                                      title="Click to copy development address">
+                                    0x61d959dF7A7601F09795C9Cfb5cEC0deEAd83Ed2
+                                </span>
+                            </div>
+                            
+                            <p class="text-gray-400 text-sm">
+                                This wallet is dedicated to ongoing development of Chainbit Royale, including infrastructure, game production, security audits, and operational expansion. Funds are allocated responsibly and are not used for market selling or trading activity.
+                            </p>
+                        </div>
+
+                        <!-- Transparency Footer -->
+                        <p class="text-center text-neon-pink font-semibold pt-4 border-t border-gray-800">
+                            <i class="fas fa-check-circle mr-2"></i> Commitment to Transparency: All allocation wallets are verifiable on-chain.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- END Wallet Transparency Card -->
+            
+            <div class="flex flex-col lg:flex-row gap-12">
                 
                 <!-- Allocation Card --><div class="lg:w-1/2">
                     <h4 class="text-2xl font-semibold text-white mb-4 border-b border-gray-800 pb-2">CBR Allocation (Total Supply: 1 Billion)</h4>
@@ -284,17 +372,17 @@
                     </div>
                 </div>
             </div>
+            
         </div>
     </section>
 
-    <!-- Roadmap Section (Updated Structure) --><section id="roadmap" class="py-20 bg-black">
+    <!-- Roadmap Section --><section id="roadmap" class="py-20 bg-black">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h3 class="text-sm font-semibold uppercase tracking-widest text-neon-pink mb-2 text-center">Future Vision</h3>
             <h2 class="4xl font-bold text-white mb-12 text-center">Development Roadmap</h2>
             
             <div class="relative max-w-4xl mx-auto">
-                <!-- The vertical timeline line is now handled by the ::after pseudo-element in CSS, 
-                     which is responsive and cleaner than a manually placed div. --><!-- Phase 1: Foundation (Right Side on Desktop, Standard on Mobile) --><div class="timeline-item flex flex-col md:flex-row justify-end items-start md:relative">
+                <!-- Phase 1: Foundation (Right Side on Desktop, Standard on Mobile) --><div class="timeline-item flex flex-col md:flex-row justify-end items-start md:relative">
                     <div class="timeline-content md:w-1/2 md:pl-12 md:text-left md:order-2 p-4 md:p-0">
                         <h4 class="text-2xl font-bold text-neon-blue">Phase 1: Foundation</h4>
                         <p class="text-gray-400">Concept finalization, core blockchain integration, and initial art asset creation.</p>
@@ -406,40 +494,91 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // --- CONTRACT COPY FUNCTIONALITY START ---
-        const contractAddress = '0x6a745038a6b9f2b66348a37e16ef5f0e04eee5fb';
-        const copyButton = document.getElementById('copy-button');
-        const statusMessage = document.getElementById('status-message');
-        const addressDisplay = document.getElementById('contract-address-display');
         
-        // Only proceed if the elements exist
-        if (copyButton && addressDisplay) {
-            // Set the event listener on the copy button
-            copyButton.addEventListener('click', () => copyToClipboard(contractAddress));
-
-            // Also allow clicking the address text itself to copy
-            addressDisplay.addEventListener('click', () => copyToClipboard(contractAddress));
-        }
-
+        // --- Core Copy Functionality ---
         /**
          * Copies the given text to the clipboard using the execCommand fallback.
          * @param {string} text The text to copy.
          */
-        function copyToClipboard(text) {
-            // 1. Create a temporary textarea element
-            const textarea = document.createElement('textarea');
-            textarea.value = text;
+        function copyToClipboardExec(text) {
+             const textarea = document.createElement('textarea');
+             textarea.value = text;
+             textarea.style.position = 'fixed';
+             textarea.style.top = 0;
+             textarea.style.left = 0;
+             textarea.style.opacity = 0;
+             document.body.appendChild(textarea);
+             textarea.focus();
+             textarea.select();
+             try {
+                // Execute the copy command
+                document.execCommand('copy');
+             } catch (err) {
+                 console.error('Fallback: Unable to copy', err);
+             }
+             document.body.removeChild(textarea);
+        }
+
+        /**
+         * Handles copy operation and provides visual feedback on the element.
+         * @param {HTMLElement} element The element that triggered the copy.
+         * @param {boolean} isButton Whether the element is the main copy button (requires different class handling).
+         */
+        function handleCopyFeedback(element, isButton) {
+            const addressToCopy = element.getAttribute('data-address');
+            if (!addressToCopy) {
+                console.error("No address found on the element to copy.");
+                return;
+            }
             
-            // 2. Set styles to hide it
-            textarea.style.position = 'fixed';
-            textarea.style.top = 0;
-            textarea.style.left = 0;
-            textarea.style.opacity = 0;
+            // Execute Copy
+            copyToClipboardExec(addressToCopy);
 
-            // 3. Append to body, select and copy
-            document.body.appendChild(textarea);
-            textarea.focus();
-            textarea.select();
+            // Store original state for feedback
+            const originalText = element.textContent;
+            const originalClass = element.className;
+            
+            // 1. Change text and color/class immediately
+            element.textContent = 'Copied!';
+            
+            if (isButton) {
+                // Button feedback
+                element.classList.add('bg-green-600', 'hover:bg-green-700');
+                element.classList.remove('neon-btn', 'text-gray-900');
+            } else {
+                // Address span feedback (simple color flash)
+                element.style.color = 'var(--neon-pink)';
+            }
+            
+            // 2. Revert after 1.5 seconds
+            setTimeout(() => {
+                element.textContent = originalText;
+                if (isButton) {
+                    element.className = originalClass; // Restore all original button classes
+                } else {
+                     element.style.color = ''; // Revert style to inherited CSS (text-white)
+                }
+            }, 1500);
+        }
 
-            try {
-                const successful = document
+        // --- Event Listeners Setup ---
+        
+        // 1. Main Contract Address Button & Display (Use data-address on the button now)
+        const copyButton = document.getElementById('copy-button');
+        const addressDisplay = document.getElementById('contract-address-display');
+        
+        if (copyButton) {
+            // Button handler
+            copyButton.addEventListener('click', () => handleCopyFeedback(copyButton, true)); 
+        }
+        if (addressDisplay) {
+            // Address text handler (non-button)
+            addressDisplay.addEventListener('click', () => handleCopyFeedback(addressDisplay, false));
+        }
+
+        // 2. Allocation Wallet Address Spans
+        document.querySelectorAll('.wallet-address-copy-container .address-text').forEach(addressSpan => {
+            addressSpan.addEventListener('click', () => handleCopyFeedback(addressSpan, false));
+        });
+    });
+</script>
