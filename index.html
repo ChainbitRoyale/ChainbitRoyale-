@@ -6,9 +6,7 @@
     <title>Chainbit Royale - A Next-Generation Battle Royale Ecosystem</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
@@ -52,7 +50,6 @@
             border: 2px solid #374151; /* Tailwind gray-700 */
             transition: all 0.3s ease;
         }
-
         .split-card-effect:hover {
             border-color: transparent; 
             /* Stacked box-shadow for split color effect */
@@ -62,50 +59,33 @@
                 /* Blue Glow Layer: Shifts to the right */
                 6px 0 15px var(--neon-blue);
         }
-
-        /* Roadmap specific styling for the timeline */
-        .timeline-item {
+        
+        /* Timeline styling for the roadmap */
+        .timeline-container {
             position: relative;
-            padding-bottom: 3rem; /* Spacing between items */
         }
-
-        .timeline-item::after {
+        .timeline-container::before {
             content: '';
             position: absolute;
             top: 0;
             left: 50%;
             transform: translateX(-50%);
-            height: 100%;
             width: 2px;
-            background-color: #1f2937; /* Tailwind gray-800 */
-            z-index: 10;
-        }
-        
-        .timeline-item:last-child::after {
-            height: 50%; /* Stop the line halfway on the last item */
+            height: 100%;
+            background: linear-gradient(to bottom, var(--neon-blue), var(--neon-pink));
+            opacity: 0.3;
         }
         
         /* Mobile adjustment: Move line to the left edge */
         @media (max-width: 767px) {
-             .timeline-item::after {
+             .timeline-container::before {
                 left: 1rem;
                 transform: translateX(0);
              }
-             .timeline-dot {
-                left: 1rem !important;
-                transform: translateX(-50%) !important;
-             }
-             .timeline-content {
-                margin-left: 3.5rem !important;
-                padding-left: 0 !important;
-                text-align: left !important;
-             }
         }
-        
     </style>
 </head>
 <body class="text-gray-200 antialiased">
-
     <!-- Header / Navigation -->
     <header class="sticky top-0 z-50 bg-black/95 backdrop-blur-sm border-b border-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
@@ -121,14 +101,12 @@
                 <a href="#team" class="text-sm font-medium hover:text-neon-blue transition duration-200">Team</a>
                 <a href="#" class="text-sm font-medium text-gray-500 cursor-not-allowed">Marketplace (Coming Soon)</a>
             </nav>
-            <!-- UPDATED WHITEPAPER LINK -->
             <a href="https://drive.google.com/file/d/1-prRNID_o9vGupxwhR04_OByksPPwVel/view?usp=sharing" target="_blank" class="neon-btn text-gray-900 px-4 py-2 text-sm font-semibold rounded-lg shadow-lg">Whitepaper (PDF)</a>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="relative h-screen flex items-center justify-center text-center p-4 overflow-hidden bg-black">
-        
         <div class="z-20 max-w-4xl flex flex-col items-center">
             <h2 class="text-6xl md:text-8xl font-black mb-4 tracking-tighter text-white">
                 <span class="text-neon-blue neon-shadow-blue">CHAINBIT</span> 
@@ -141,18 +119,11 @@
                 The Next-Generation Battle Royale. True Asset Ownership. Play-to-Earn.
             </p>
             
-            <!-- CTA Buttons -->
             <div class="flex flex-col items-center gap-4 w-full max-w-lg mx-auto"> 
-                
                 <div class="flex flex-col sm:flex-row justify-center gap-4 w-full">
-                    <!-- Secondary CTA: Explore Gameplay -->
                     <a href="#gameplay" class="px-8 py-3 text-lg font-bold rounded-xl border-2 border-neon-blue text-neon-blue hover:bg-neon-blue/20 transition duration-300 transform hover:scale-105 w-full text-center sm:w-auto">Explore Gameplay</a>
-
-                    <!-- Third CTA: View Tokenomics -->
                     <a href="#tokenomics" class="px-8 py-3 text-lg font-bold rounded-xl border-2 border-neon-blue text-neon-blue hover:bg-neon-blue/20 transition duration-300 transform hover:scale-105 w-full text-center sm:w-auto">View Tokenomics</a>
                 </div>
-                
-                <!-- Row 2: Telegram button -->
                 <a href="https://t.me/ChainbitRoyale" target="_blank" class="neon-btn text-gray-900 px-8 py-3 text-lg font-bold rounded-xl shadow-lg transform hover:scale-105 w-full sm:w-80 md:w-96 text-center">Join Our Telegram Group</a>
             </div>
         </div>
@@ -184,11 +155,8 @@
     <section id="gameplay" class="py-20 bg-black">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h3 class="text-sm font-semibold uppercase tracking-widest text-neon-blue neon-shadow-blue mb-2">Core Mechanics</h3>
-            <h2 class="4xl font-bold text-white mb-12">Play-to-Earn Tournaments in Fracture</h2>
-
+            <h2 class="text-4xl font-bold text-white mb-12">Play-to-Earn Tournaments in Fracture</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                
-                <!-- Card 1: Variable Stakes -->
                 <div class="gradient-bg p-8 rounded-2xl split-card-effect transition duration-300 transform hover:scale-[1.02]">
                     <i class="fas fa-trophy text-4xl text-neon-pink mb-4 neon-shadow-blue"></i>
                     <h4 class="text-xl font-semibold text-white mb-3">Variable Stakes</h4>
@@ -196,8 +164,6 @@
                         Enter tournaments by paying a fee in **CBR** token. We offer **different stake games to accommodate every player’s investment level** from casual matches to high-stakes contests.
                     </p>
                 </div>
-                
-                <!-- Card 2: Self-Sustaining Economy -->
                 <div class="gradient-bg p-8 rounded-2xl split-card-effect transition duration-300 transform hover:scale-[1.02]">
                     <i class="fas fa-hand-holding-usd text-4xl text-neon-pink mb-4 neon-shadow-blue"></i>
                     <h4 class="text-xl font-semibold text-white mb-3">Self-Sustaining Economy</h4>
@@ -205,8 +171,6 @@
                         A **minimal percentage** of the entry fee pool is automatically deducted for team funding and operational costs, ensuring the long-term health of the game.
                     </p>
                 </div>
-                
-                <!-- Card 3: Instant Payout -->
                 <div class="gradient-bg p-8 rounded-2xl split-card-effect transition duration-300 transform hover:scale-[1.02]">
                     <i class="fas fa-chart-line text-4xl text-neon-pink mb-4 neon-shadow-blue"></i>
                     <h4 class="text-xl font-semibold text-white mb-3">Instant Payout</h4>
@@ -223,60 +187,44 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h3 class="text-sm font-semibold uppercase tracking-widest text-neon-blue neon-shadow-blue mb-2 text-center">CBR Token Utility</h3>
             <h2 class="text-4xl font-bold text-white mb-12 text-center">Tokenomics: Sustainable Supply</h2>
-
-            <!-- CONTRACT ADDRESS CARD WITH COPY FUNCTIONALITY -->
+            
             <div class="mb-12">
                 <div class="bg-gray-900 p-6 rounded-2xl split-card-effect border border-neon-blue/30 shadow-2xl">
                     <h4 class="text-xl font-semibold text-white mb-3 text-center">Official CBR Contract Address</h4>
-                    
                     <div class="flex flex-col md:flex-row items-center justify-center space-y-3 md:space-y-0 md:space-x-4">
-                        
-                        <!-- Display Address -->
                         <div id="contract-address-display"
                              data-address="0xDf9F805487900498cac535A552D099DC4916C6A3"
                              class="w-full md:w-auto flex-grow break-all bg-gray-950 text-neon-pink neon-border-blue border-2 p-3 rounded-xl text-2xl font-mono cursor-pointer transition duration-150 ease-in-out hover:bg-gray-900/50"
                              title="Click to copy address">
                             0xDf9F805487900498cac535A552D099DC4916C6A3
                         </div>
-
-                        <!-- Copy Button -->
                         <button id="copy-button" 
                                 class="w-full md:w-auto flex-shrink-0 neon-btn text-gray-900 font-semibold py-3 px-6 text-sm rounded-xl transition duration-200 transform hover:scale-[1.02] active:scale-[0.98]">
                             <i class="fas fa-copy mr-2"></i>
                             Copy Address
                         </button>
                     </div>
-                    <!-- Success Message -->
-                    <div id="status-message" class="mt-3 text-center text-sm font-medium h-6">
-                        <!-- Message will appear here -->
-                    </div>
+                    <div id="status-message" class="mt-3 text-center text-sm font-medium h-6"></div>
                 </div>
             </div>
-            <!-- END CONTRACT ADDRESS CARD -->
-            
+
             <div class="flex flex-col lg:flex-row gap-12">
-                
-                <!-- Allocation Card -->
                 <div class="lg:w-1/2">
                     <h4 class="text-2xl font-semibold text-white mb-4 border-b border-gray-800 pb-2">CBR Allocation (Total Supply: 1 Billion)</h4>
                     <div class="bg-gray-900 p-6 rounded-xl split-card-effect">
                         <ul class="space-y-4">
-                            
                             <li class="flex justify-between items-center pb-2 border-b border-gray-800 last:border-b-0">
                                 <span class="flex items-center text-lg text-neon-blue font-medium"><i class="fas fa-fire-alt mr-3"></i>DEX Liquidity Pool</span>
                                 <span class="text-2xl font-bold text-white">50%</span>
                             </li>
-                            
                             <li class="flex justify-between items-center pb-2 border-b border-gray-800 last:border-b-0">
                                 <span class="flex items-center text-lg text-neon-pink font-medium"><i class="fas fa-lock mr-3"></i>Future Staking Pools</span>
                                 <span class="text-2xl font-bold text-white">30%</span> 
                             </li>
-                            
                             <li class="flex justify-between items-center pb-2 border-b border-gray-800 last:border-b-0">
                                 <span class="flex items-center text-lg text-gray-400 font-medium"><i class="fas fa-database mr-3"></i>Treasury Reserves</span>
                                 <span class="text-2xl font-bold text-white">10%</span>
                             </li>
-                            
                             <li class="flex justify-between items-center">
                                 <span class="flex items-center text-lg text-gray-400 font-medium"><i class="fas fa-code mr-3"></i>Development</span>
                                 <span class="text-2xl font-bold text-white">10%</span>
@@ -284,8 +232,6 @@
                         </ul>
                     </div>
                 </div>
-
-                <!-- Transaction Tax Card -->
                 <div class="lg:w-1/2">
                     <h4 class="text-2xl font-semibold text-white mb-4 border-b border-gray-800 pb-2">Temporary Transaction Tax</h4>
                     <div class="gradient-bg p-6 rounded-xl border border-neon-pink/30 shadow-2xl">
@@ -303,244 +249,262 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- NEW SECTION: WALLET TRANSPARENCY AND ALLOCATIONS -->
+
+            <!-- Public Wallet Transparency -->
             <div class="mt-20">
                 <h3 class="text-sm font-semibold uppercase tracking-widest text-neon-pink neon-shadow-pink mb-2 text-center">Wallet Transparency</h3>
                 <h2 class="text-4xl font-bold text-white mb-12 text-center">Public Allocation Wallets</h2>
-                
                 <p class="text-center text-gray-400 max-w-3xl mx-auto mb-10">
-                    Chainbit Royale maintains full transparency for all ecosystem-controlled wallets. Each allocation wallet is publicly verifiable and reserved strictly for its stated purpose. Tokens in these wallets are **not** used for market selling or trading activity.
+                    Chainbit Royale maintains full transparency for all ecosystem-controlled wallets. Each allocation wallet is publicly verifiable and reserved strictly for its stated purpose.
                 </p>
-
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    
-                    <!-- Wallet 1: Staking & Community Rewards (30%) -->
                     <div class="gradient-bg p-6 rounded-2xl split-card-effect shadow-xl">
                         <div class="flex items-center mb-3">
                             <i class="fas fa-gift text-2xl text-neon-blue mr-3"></i>
                             <h4 class="text-xl font-bold text-white">Staking & Rewards (30%)</h4>
                         </div>
-                        <p class="text-sm font-light text-gray-400 mb-4">
-                            Holds tokens allocated for upcoming staking pools, gameplay rewards, tournaments, and community incentive programs. Tokens are released gradually.
-                        </p>
+                        <p class="text-sm font-light text-gray-400 mb-4">Holds tokens for upcoming staking pools, gameplay rewards, and community incentives.</p>
                         <div class="mt-4">
                             <h5 class="text-xs font-semibold uppercase text-neon-pink mb-1">Wallet Address:</h5>
-                            <div id="rewards-address-display" data-address="0xE8E4153888d54e314fD6970Db4140A811ff6dc3c"
-                                 class="break-all bg-gray-950 text-neon-blue font-mono text-xs p-2 rounded-lg border border-gray-700 cursor-pointer hover:bg-gray-800 transition duration-150 ease-in-out"
-                                 title="Click to copy address">
+                            <div id="rewards-address-display" data-address="0xE8E4153888d54e314fD6970Db4140A811ff6dc3c" class="break-all bg-gray-950 text-neon-blue font-mono text-xs p-2 rounded-lg border border-gray-700 cursor-pointer hover:bg-gray-800">
                                 0xE8E4153888d54e314fD6970Db4140A811ff6dc3c
                             </div>
-                            <button class="copy-wallet-btn neon-btn text-gray-900 w-full mt-2 py-1.5 text-xs font-semibold rounded-lg" data-target-id="rewards-address-display">
-                                Copy
-                            </button>
+                            <button class="copy-wallet-btn neon-btn text-gray-900 w-full mt-2 py-1.5 text-xs font-semibold rounded-lg" data-target-id="rewards-address-display">Copy</button>
                         </div>
                     </div>
-                    
-                    <!-- Wallet 2: Project Reserve (10%) -->
                     <div class="gradient-bg p-6 rounded-2xl split-card-effect shadow-xl">
                         <div class="flex items-center mb-3">
                             <i class="fas fa-university text-2xl text-neon-blue mr-3"></i>
                             <h4 class="text-xl font-bold text-white">Project Reserve (10%)</h4>
                         </div>
-                        <p class="text-sm font-light text-gray-400 mb-4">
-                            Supports long-term sustainability as a non-circulating strategic reserve for operational stability, emergency funding, and future initiative support.
-                        </p>
+                        <p class="text-sm font-light text-gray-400 mb-4">Strategic reserve for long-term sustainability and operational stability.</p>
                         <div class="mt-4">
                             <h5 class="text-xs font-semibold uppercase text-neon-pink mb-1">Wallet Address:</h5>
-                            <div id="reserve-address-display" data-address="0x4204C9517F295321cd0468A9725121698264c086"
-                                 class="break-all bg-gray-950 text-neon-blue font-mono text-xs p-2 rounded-lg border border-gray-700 cursor-pointer hover:bg-gray-800 transition duration-150 ease-in-out"
-                                 title="Click to copy address">
+                            <div id="reserve-address-display" data-address="0x4204C9517F295321cd0468A9725121698264c086" class="break-all bg-gray-950 text-neon-blue font-mono text-xs p-2 rounded-lg border border-gray-700 cursor-pointer hover:bg-gray-800">
                                 0x4204C9517F295321cd0468A9725121698264c086
                             </div>
-                            <button class="copy-wallet-btn neon-btn text-gray-900 w-full mt-2 py-1.5 text-xs font-semibold rounded-lg" data-target-id="reserve-address-display">
-                                Copy
-                            </button>
+                            <button class="copy-wallet-btn neon-btn text-gray-900 w-full mt-2 py-1.5 text-xs font-semibold rounded-lg" data-target-id="reserve-address-display">Copy</button>
                         </div>
                     </div>
-
-                    <!-- Wallet 3: Development Fund (10%) -->
                     <div class="gradient-bg p-6 rounded-2xl split-card-effect shadow-xl">
                         <div class="flex items-center mb-3">
                             <i class="fas fa-code text-2xl text-neon-blue mr-3"></i>
                             <h4 class="text-xl font-bold text-white">Development Fund (10%)</h4>
                         </div>
-                        <p class="text-sm font-light text-gray-400 mb-4">
-                            Dedicated to ongoing development, game production, infrastructure, security audits, and operational expansion. Funds are allocated responsibly.
-                        </p>
+                        <p class="text-sm font-light text-gray-400 mb-4">Dedicated to ongoing game production, infrastructure, and security audits.</p>
                         <div class="mt-4">
                             <h5 class="text-xs font-semibold uppercase text-neon-pink mb-1">Wallet Address:</h5>
-                            <div id="dev-address-display" data-address="0xe6544111743e08B2091436D39F3D54D8B6bE2310"
-                                 class="break-all bg-gray-950 text-neon-blue font-mono text-xs p-2 rounded-lg border border-gray-700 cursor-pointer hover:bg-gray-800 transition duration-150 ease-in-out"
-                                 title="Click to copy address">
+                            <div id="dev-address-display" data-address="0xe6544111743e08B2091436D39F3D54D8B6bE2310" class="break-all bg-gray-950 text-neon-blue font-mono text-xs p-2 rounded-lg border border-gray-700 cursor-pointer hover:bg-gray-800">
                                 0xe6544111743e08B2091436D39F3D54D8B6bE2310
                             </div>
-                            <button class="copy-wallet-btn neon-btn text-gray-900 w-full mt-2 py-1.5 text-xs font-semibold rounded-lg" data-target-id="dev-address-display">
-                                Copy
-                            </button>
+                            <button class="copy-wallet-btn neon-btn text-gray-900 w-full mt-2 py-1.5 text-xs font-semibold rounded-lg" data-target-id="dev-address-display">Copy</button>
                         </div>
                     </div>
-
                 </div>
-                
-                <div class="mt-10 p-4 rounded-xl bg-gray-800/50 border border-gray-700 text-center">
-                    <p class="text-sm font-medium text-neon-pink">
-                        <i class="fas fa-lock mr-2"></i> Commitment to Transparency: All allocation wallets are verifiable on-chain.
-                    </p>
-                </div>
-                
             </div>
-            
         </div>
     </section>
 
-    <!-- Roadmap Section (Updated Structure) -->
+    <!-- Detailed 2026 Roadmap Section -->
     <section id="roadmap" class="py-20 bg-black">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-sm font-semibold uppercase tracking-widest text-neon-pink mb-2 text-center">Future Vision</h3>
-            <h2 class="4xl font-bold text-white mb-12 text-center">Development Roadmap</h2>
+            <h3 class="text-sm font-semibold uppercase tracking-widest text-neon-pink mb-2 text-center">Visionary Progression</h3>
+            <h2 class="text-4xl font-bold text-white mb-12 text-center">Chainbit Royale – 2026 Roadmap</h2>
             
-            <div class="relative max-w-4xl mx-auto">
-                <!-- Phase 1: Foundation (Right Side on Desktop, Standard on Mobile) -->
-                <div class="timeline-item flex flex-col md:flex-row justify-end items-start md:relative">
-                    <div class="timeline-content md:w-1/2 md:pl-12 md:text-left md:order-2 p-4 md:p-0">
-                        <h4 class="text-2xl font-bold text-neon-blue">Phase 1: Foundation</h4>
-                        <p class="text-gray-400">Concept finalization, core blockchain integration, and initial art asset creation.</p>
+            <div class="space-y-12 max-w-5xl mx-auto">
+                
+                <!-- Q1 2026 -->
+                <div class="gradient-bg p-8 rounded-2xl border border-neon-blue/30 shadow-xl split-card-effect">
+                    <div class="flex items-center justify-between mb-6 border-b border-gray-800 pb-4">
+                        <h4 class="text-2xl font-bold text-neon-blue">Q1 2026: Foundation & Community Growth</h4>
+                        <span class="text-sm font-mono text-neon-pink">Theme: Awareness, Trust, Early Momentum</span>
                     </div>
-                    <!-- Timeline Dot -->
-                    <div class="timeline-dot absolute w-5 h-5 bg-neon-blue rounded-full border-2 border-black left-0 top-1 md:left-1/2 md:transform md:-translate-x-1/2 md:top-4 z-20 shadow-md shadow-neon-blue"></div>
-                </div>
-                
-                <!-- Separator Image -->
-                <div class="flex justify-center py-6">
-                    <img src="https://i.ibb.co/LDJs0XZ9/Gemini-Generated-Image-vylc4rvylc4rvylc.jpg" 
-                         onerror="this.onerror=null; this.src='https://placehold.co/100x50/000000/ff00c8?text=Next+Phase&font=Inter';" 
-                         alt="Roadmap Separator Icon" 
-                         class="w-32 h-auto rounded-full p-1" 
-                         style="box-shadow: 0 0 10px var(--neon-pink);">
-                </div>
-                
-                <!-- Phase 2: Alpha Testing (Left Side on Desktop, Standard on Mobile) -->
-                <div class="timeline-item flex flex-col md:flex-row justify-start items-start md:relative">
-                    <div class="timeline-content md:w-1/2 md:pr-12 md:text-right p-4 md:p-0">
-                        <h4 class="text-2xl font-bold text-neon-blue">Phase 2: Alpha Testing</h4>
-                        <p class="text-gray-400">Launch of closed alpha, rigorous testing of core gameplay loops and blockchain functionality.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm leading-relaxed">
+                        <div>
+                            <p class="text-white font-semibold mb-2"><i class="fas fa-users mr-2 text-neon-blue"></i> Community & Brand</p>
+                            <ul class="list-disc list-inside text-gray-400 space-y-1 ml-2">
+                                <li>Scale existing community hubs (Facebook, X, Telegram)</li>
+                                <li>Community competitions (XP leaderboards, meme contests)</li>
+                                <li>Ambassador / moderator program</li>
+                                <li>Regular AMAs & dev/community updates</li>
+                            </ul>
+                            <p class="text-white font-semibold mt-4 mb-2"><i class="fas fa-gamepad mr-2 text-neon-blue"></i> Game Concept Sharing</p>
+                            <ul class="list-disc list-inside text-gray-400 space-y-1 ml-2">
+                                <li>Reveal multiple game concept ideas (modes, weapons, maps)</li>
+                                <li>Lore, art direction, and early UI concept previews</li>
+                                <li>Community naming & design contests</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold mb-2"><i class="fas fa-chart-bar mr-2 text-neon-blue"></i> Listings & Visibility</p>
+                            <ul class="list-disc list-inside text-gray-400 space-y-1 ml-2">
+                                <li>CoinMarketCap listing</li>
+                                <li>CoinGecko listing</li>
+                                <li>Token info pages fully optimized</li>
+                            </ul>
+                            <p class="text-white font-semibold mt-4 mb-2"><i class="fas fa-handshake mr-2 text-neon-blue"></i> Partnerships & Marketing</p>
+                            <ul class="list-disc list-inside text-gray-400 space-y-1 ml-2">
+                                <li>Secure 1–2 strategic partnerships</li>
+                                <li>Coordinated marketing push & influencer outreach</li>
+                                <li>PR articles & social content cadence</li>
+                            </ul>
+                        </div>
                     </div>
-                    <!-- Timeline Dot -->
-                    <div class="timeline-dot absolute w-5 h-5 bg-neon-blue rounded-full border-2 border-black left-0 top-1 md:left-1/2 md:transform md:-translate-x-1/2 md:top-4 z-20 shadow-md shadow-neon-blue"></div>
-                </div>
-                
-                <!-- Separator Image -->
-                <div class="flex justify-center py-6">
-                    <img src="https://i.ibb.co/LDJs0XZ9/Gemini-Generated-Image-vylc4rvylc4rvylc.jpg" 
-                         onerror="this.onerror=null; this.src='https://placehold.co/100x50/000000/ff00c8?text=Next+Phase&font=Inter';" 
-                         alt="Roadmap Separator Icon" 
-                         class="w-32 h-auto rounded-full p-1" 
-                         style="box-shadow: 0 0 10px var(--neon-pink);">
-                </div>
-                
-                <!-- Phase 3: Public Beta & Token Launch (Right Side on Desktop, Standard on Mobile) -->
-                <div class="timeline-item flex flex-col md:flex-row justify-end items-start md:relative">
-                    <div class="timeline-content md:w-1/2 md:pl-12 md:text-left md:order-2 p-4 md:p-0">
-                        <h4 class="text-2xl font-bold text-neon-pink">Phase 3: Public Beta & Token Launch</h4>
-                        <p class="text-gray-400">Public Beta release, **CBR** token launch, and opening of the in-game NFT marketplace.</p>
+                    <div class="mt-6 pt-4 border-t border-gray-800 italic text-neon-blue text-center text-xs">
+                        Milestone Outcome: Recognizable brand presence, highly engaged community, and increased visibility.
                     </div>
-                    <!-- Timeline Dot -->
-                    <div class="timeline-dot absolute w-5 h-5 bg-neon-pink rounded-full border-2 border-black left-0 top-1 md:left-1/2 md:transform md:-translate-x-1/2 md:top-4 z-20 shadow-md shadow-neon-pink"></div>
-                </div>
-                
-                <!-- Separator Image -->
-                <div class="flex justify-center py-6">
-                    <img src="https://i.ibb.co/LDJs0XZ9/Gemini-Generated-Image-vylc4rvylc4rvylc.jpg" 
-                         onerror="this.onerror=null; this.src='https://placehold.co/100x50/000000/ff00c8?text=Next+Phase&font=Inter';" 
-                         alt="Roadmap Separator Icon" 
-                         class="w-32 h-auto rounded-full p-1" 
-                         style="box-shadow: 0 0 10px var(--neon-pink);">
                 </div>
 
-                <!-- Phase 4: Full Launch & Expansion (Left Side on Desktop, Standard on Mobile) -->
-                <div class="timeline-item flex flex-col md:flex-row justify-start items-start md:relative">
-                    <div class="timeline-content md:w-1/2 md:pr-12 md:text-right p-4 md:p-0">
-                        <h4 class="text-2xl font-bold text-neon-pink">Phase 4: Full Launch & Expansion</h4>
-                        <p class="text-gray-400">Official full launch, competitive seasons begin, governance model introduced, and **transaction tax set to 0%**.</p>
+                <!-- Q2 2026 -->
+                <div class="gradient-bg p-8 rounded-2xl border border-neon-blue/30 shadow-xl split-card-effect">
+                    <div class="flex items-center justify-between mb-6 border-b border-gray-800 pb-4">
+                        <h4 class="text-2xl font-bold text-neon-blue">Q2 2026: Core Game Development</h4>
+                        <span class="text-sm font-mono text-neon-pink">Theme: Building the Product</span>
                     </div>
-                    <!-- Timeline Dot -->
-                    <div class="timeline-dot absolute w-5 h-5 bg-neon-pink rounded-full border-2 border-black left-0 top-1 md:left-1/2 md:transform md:-translate-x-1/2 md:top-4 z-20 shadow-md shadow-neon-pink"></div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm leading-relaxed">
+                        <div>
+                            <p class="text-white font-semibold mb-2"><i class="fas fa-code mr-2 text-neon-blue"></i> Game Development</p>
+                            <ul class="list-disc list-inside text-gray-400 space-y-1 ml-2">
+                                <li>Finalize core game concept & mechanics</li>
+                                <li>Develop playable internal prototype</li>
+                                <li>Economy & token utility design finalized</li>
+                                <li>NFT/game asset framework & map design</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold mb-2"><i class="fas fa-server mr-2 text-neon-blue"></i> Tech & Community</p>
+                            <ul class="list-disc list-inside text-gray-400 space-y-1 ml-2">
+                                <li>Smart contract architecture for tournaments</li>
+                                <li>Backend setup (matchmaking, rewards)</li>
+                                <li>Security review of core contracts</li>
+                                <li>Early alpha access waitlist opens</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-800 italic text-neon-blue text-center text-xs">
+                        Milestone Outcome: Functional game prototype & clear token/gameplay loop.
+                    </div>
+                </div>
+
+                <!-- Q3 2026 -->
+                <div class="gradient-bg p-8 rounded-2xl border border-neon-pink/30 shadow-xl split-card-effect">
+                    <div class="flex items-center justify-between mb-6 border-b border-gray-800 pb-4">
+                        <h4 class="text-2xl font-bold text-neon-pink">Q3 2026: Alpha, Expansion & Monetization</h4>
+                        <span class="text-sm font-mono text-neon-pink">Theme: Playtesting & Scale</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm leading-relaxed">
+                        <div>
+                            <p class="text-white font-semibold mb-2"><i class="fas fa-vial mr-2 text-neon-pink"></i> Game Testing</p>
+                            <ul class="list-disc list-inside text-gray-400 space-y-1 ml-2">
+                                <li>Closed Alpha release (community + partners)</li>
+                                <li>Gameplay balancing & bug fixes</li>
+                                <li>Performance optimization</li>
+                            </ul>
+                            <p class="text-white font-semibold mt-4 mb-2"><i class="fas fa-coins mr-2 text-neon-pink"></i> Monetization Systems</p>
+                            <ul class="list-disc list-inside text-gray-400 space-y-1 ml-2">
+                                <li>NFT mint or in-game asset rollout</li>
+                                <li>Marketplace integration</li>
+                                <li>Battle pass / seasonal reward system</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold mb-2"><i class="fas fa-rocket mr-2 text-neon-pink"></i> Ecosystem & Marketing</p>
+                            <ul class="list-disc list-inside text-gray-400 space-y-1 ml-2">
+                                <li>Additional partnerships (Guilds, Launchpads)</li>
+                                <li>Creator & streamer onboarding</li>
+                                <li>Gameplay trailers & alpha streams</li>
+                                <li>Press coverage on alpha launch</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-800 italic text-neon-pink text-center text-xs">
+                        Milestone Outcome: Playable alpha with active users and first revenue systems live.
+                    </div>
+                </div>
+
+                <!-- Q4 2026 -->
+                <div class="gradient-bg p-8 rounded-2xl border border-neon-pink/30 shadow-xl split-card-effect">
+                    <div class="flex items-center justify-between mb-6 border-b border-gray-800 pb-4">
+                        <h4 class="text-2xl font-bold text-neon-pink">Q4 2026: Beta Launch & Ecosystem Maturity</h4>
+                        <span class="text-sm font-mono text-neon-pink">Theme: Public Access & Long-Term Growth</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm leading-relaxed">
+                        <div>
+                            <p class="text-white font-semibold mb-2"><i class="fas fa-globe mr-2 text-neon-pink"></i> Game Release</p>
+                            <ul class="list-disc list-inside text-gray-400 space-y-1 ml-2">
+                                <li>Open Beta launch & onboarding</li>
+                                <li>Cross-platform optimization</li>
+                                <li>Large-scale tournaments</li>
+                                <li>End-of-year community rewards</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold mb-2"><i class="fas fa-shield-alt mr-2 text-neon-pink"></i> Scaling & Sustainability</p>
+                            <ul class="list-disc list-inside text-gray-400 space-y-1 ml-2">
+                                <li>Long-term reward & staking mechanics</li>
+                                <li>Seasonal competitive events & ranked modes</li>
+                                <li>Additional exchange listings</li>
+                                <li>Roadmap for 2027 revealed</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-800 italic text-neon-pink text-center text-xs">
+                        Milestone Outcome: Publicly playable game and sustainable ecosystem.
+                    </div>
                 </div>
 
             </div>
-            
         </div>
     </section>
 
-    <!-- Team Section - NEW SECTION -->
+    <!-- Team Section -->
     <section id="team" class="py-20 bg-gray-950">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h3 class="text-sm font-semibold uppercase tracking-widest text-neon-blue neon-shadow-blue mb-2">The Architects of Chainbit</h3>
             <h2 class="text-4xl font-bold text-white mb-12">Meet the Core Development Team</h2>
             
-            <!-- Team Photo/Image - NOW UPDATED WITH USER'S IMAGE -->
             <div class="mb-12 mx-auto max-w-xl rounded-xl overflow-hidden shadow-2xl border-2 border-neon-pink/50">
-                <img src="https://i.ibb.co/Myszn4Jk/Chat-GPT-Image-Nov-23-2025-11-33-52-PM.jpg" 
-                     onerror="this.onerror=null; this.src='https://placehold.co/800x400/000000/ff00c8?text=Chainbit+Royale+Core+Team+Image+Missing&font=Inter';" 
-                     alt="Chainbit Royale Development Team" 
-                     class="w-full h-auto object-contain bg-black" 
-                     style="transition: all 0.3s ease;">
+                <img src="https://i.ibb.co/Myszn4Jk/Chat-GPT-Image-Nov-23-2025-11-33-52-PM.jpg" onerror="this.onerror=null; this.src='https://placehold.co/800x400/000000/ff00c8?text=Team+Image&font=Inter';" alt="Team" class="w-full h-auto object-contain bg-black">
             </div>
 
-            <!-- Team Member List -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
-                
-                <!-- Team Member: Shadow -->
                 <div class="gradient-bg p-6 rounded-xl split-card-effect shadow-lg">
                     <div class="text-3xl mb-2">🧑‍💻</div>
                     <h4 class="text-xl font-bold text-neon-blue mb-1">Shadow</h4>
                     <p class="text-sm font-semibold text-neon-pink mb-3">Project Lead</p>
                     <p class="text-gray-400 text-sm">Coordinates development, roadmap and high-level strategy.</p>
                 </div>
-
-                <!-- Team Member: Gigacryptonian -->
                 <div class="gradient-bg p-6 rounded-xl split-card-effect shadow-lg">
                     <div class="text-3xl mb-2">🤝</div>
                     <h4 class="text-xl font-bold text-neon-blue mb-1">Gigacryptonian</h4>
-                    <p class="text-sm font-semibold text-neon-pink mb-3">Strategic Relations Manager & Community Lead</p>
-                    <p class="text-gray-400 text-sm">Manages partnerships, collaborations, community growth and user engagement.</p>
+                    <p class="text-sm font-semibold text-neon-pink mb-3">Relations & Community</p>
+                    <p class="text-gray-400 text-sm">Manages partnerships, collaborations, and community growth.</p>
                 </div>
-
-                <!-- Team Member: Zeroframe -->
                 <div class="gradient-bg p-6 rounded-xl split-card-effect shadow-lg">
                     <div class="text-3xl mb-2">🧬</div>
                     <h4 class="text-xl font-bold text-neon-blue mb-1">Zeroframe</h4>
                     <p class="text-sm font-semibold text-neon-pink mb-3">Lead Game Developer</p>
-                    <p class="text-gray-400 text-sm">Responsible for core game mechanics, weapon systems and gameplay logic.</p>
+                    <p class="text-gray-400 text-sm">Responsible for core game mechanics and weapon systems.</p>
                 </div>
-
-                <!-- Team Member: Lena Void -->
                 <div class="gradient-bg p-6 rounded-xl split-card-effect shadow-lg">
                     <div class="text-3xl mb-2">🎨</div>
                     <h4 class="text-xl font-bold text-neon-blue mb-1">Lena Void</h4>
                     <p class="text-sm font-semibold text-neon-pink mb-3">Art Director</p>
                     <p class="text-gray-400 text-sm">Oversees visual identity, world design and character aesthetics.</p>
                 </div>
-
-                <!-- Team Member: Echo -->
                 <div class="gradient-bg p-6 rounded-xl split-card-effect shadow-lg">
                     <div class="text-3xl mb-2">🎮</div>
                     <h4 class="text-xl font-bold text-neon-blue mb-1">Echo</h4>
                     <p class="text-sm font-semibold text-neon-pink mb-3">Gameplay Designer</p>
                     <p class="text-gray-400 text-sm">Designs game flow, P2E systems, balancing and in-game experiences.</p>
                 </div>
-
-                <!-- Team Member: Chester -->
                 <div class="gradient-bg p-6 rounded-xl split-card-effect shadow-lg">
                     <div class="text-3xl mb-2">🛠️</div>
                     <h4 class="text-xl font-bold text-neon-blue mb-1">Chester</h4>
                     <p class="text-sm font-semibold text-neon-pink mb-3">Backend Developer</p>
                     <p class="text-gray-400 text-sm">Infrastructure, servers, blockchain integration and scaling.</p>
                 </div>
-                
             </div>
-            
         </div>
     </section>
 
@@ -551,107 +515,55 @@
             <div class="flex justify-center space-x-6">
                 <a href="https://t.me/ChainbitRoyale" target="_blank" class="text-gray-400 hover:text-neon-blue transition duration-200"><i class="fab fa-telegram-plane text-xl"></i></a>
                 <a href="https://x.com/chainbitroyale" target="_blank" class="text-gray-400 hover:text-neon-blue transition duration-200"><i class="fab fa-twitter text-xl"></i></a>
-                <!-- UPDATED WHITEPAPER LINK -->
                 <a href="https://drive.google.com/file/d/1-prRNID_o9vGupxwhR04_OByksPPwVel/view?usp=sharing" target="_blank" class="text-gray-400 hover:text-neon-blue transition duration-200"><i class="fas fa-book-open text-xl"></i></a>
             </div>
         </div>
     </footer>
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // --- CONTRACT COPY FUNCTIONALITY START ---
-        // UPDATED: New Official Contract Address
-        const contractAddress = '0xDf9F805487900498cac535A552D099DC4916C6A3';
-        const copyButton = document.getElementById('copy-button');
-        const statusMessage = document.getElementById('status-message');
-        const addressDisplay = document.getElementById('contract-address-display');
-        const copyWalletButtons = document.querySelectorAll('.copy-wallet-btn');
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const contractAddress = '0xDf9F805487900498cac535A552D099DC4916C6A3';
+            const copyButton = document.getElementById('copy-button');
+            const addressDisplay = document.getElementById('contract-address-display');
+            const copyWalletButtons = document.querySelectorAll('.copy-wallet-btn');
 
-        /**
-         * Copies the given text to the clipboard using the execCommand fallback.
-         * Provides visual feedback on the trigger element itself.
-         * @param {string} text The text to copy.
-         * @param {HTMLElement} triggerElement The button or element that initiated the copy.
-         */
-        function copyToClipboard(text, triggerElement) {
-            // 1. Create a temporary textarea element
-            const textarea = document.createElement('textarea');
-            textarea.value = text;
-            
-            // 2. Set styles to hide it
-            textarea.style.position = 'fixed';
-            textarea.style.top = 0;
-            textarea.style.left = 0;
-            textarea.style.opacity = 0;
-
-            // 3. Append to body, select and copy
-            document.body.appendChild(textarea);
-            textarea.focus();
-            textarea.select();
-
-            try {
-                const successful = document.execCommand('copy');
-                if (successful) {
-                    const originalText = triggerElement.textContent;
-                    const originalClass = triggerElement.className;
-                    
-                    // Give visual feedback on success
-                    triggerElement.textContent = 'Copied!';
-                    triggerElement.classList.add('bg-green-600', 'hover:bg-green-700');
-                    triggerElement.classList.remove('neon-btn', 'text-neon-blue', 'text-neon-pink'); 
-                    
-                    // Reset after 2 seconds
-                    setTimeout(() => {
-                        triggerElement.textContent = originalText;
-                        triggerElement.className = originalClass; // Restore original classes, including neon-btn
-                    }, 2000);
-                } else {
-                    console.error('Fallback: Copying text command failed.');
-                    // Fallback visual feedback (if central status message is available)
-                    if (statusMessage) {
-                        statusMessage.textContent = 'Copy failed. Please copy manually.';
-                        statusMessage.classList.add('text-red-500');
+            function copyToClipboard(text, triggerElement) {
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                textarea.style.position = 'fixed';
+                textarea.style.opacity = 0;
+                document.body.appendChild(textarea);
+                textarea.focus();
+                textarea.select();
+                try {
+                    const successful = document.execCommand('copy');
+                    if (successful) {
+                        const originalText = triggerElement.textContent;
+                        triggerElement.textContent = 'Copied!';
                         setTimeout(() => {
-                            statusMessage.textContent = '';
-                            statusMessage.classList.remove('text-red-500');
-                        }, 3000);
+                            triggerElement.textContent = originalText;
+                        }, 2000);
                     }
+                } catch (err) {
+                    console.error('Copy failed', err);
                 }
-            } catch (err) {
-                console.error('Fallback: Unable to copy', err);
+                document.body.removeChild(textarea);
             }
 
-            // 4. Clean up
-            document.body.removeChild(textarea);
-        }
-
-        // Main Contract Address Handler
-        if (copyButton && addressDisplay) {
-            // Pass the button itself to the copy function for feedback
-            copyButton.addEventListener('click', () => copyToClipboard(contractAddress, copyButton)); 
+            if (copyButton && addressDisplay) {
+                copyButton.addEventListener('click', () => copyToClipboard(contractAddress, copyButton)); 
+                addressDisplay.addEventListener('click', () => copyToClipboard(contractAddress, addressDisplay));
+            }
             
-            // Pass the display element to the copy function for feedback (note: status bar is not used for this one)
-            addressDisplay.addEventListener('click', () => copyToClipboard(contractAddress, addressDisplay));
-        }
-        
-        // Dynamic Allocation Wallet Handler
-        copyWalletButtons.forEach(button => {
-            const targetId = button.getAttribute('data-target-id');
-            const targetElement = document.getElementById(targetId);
-            
-            // Set up click listener on the button
-            button.addEventListener('click', () => {
-                const address = targetElement.getAttribute('data-address');
-                copyToClipboard(address, button);
-            });
-            
-            // Set up click listener on the address display element
-            targetElement.addEventListener('click', () => {
-                 const address = targetElement.getAttribute('data-address');
-                 // Use the display element itself for visual feedback on click
-                copyToClipboard(address, targetElement); 
+            copyWalletButtons.forEach(button => {
+                const targetId = button.getAttribute('data-target-id');
+                const targetElement = document.getElementById(targetId);
+                button.addEventListener('click', () => {
+                    const address = targetElement.getAttribute('data-address');
+                    copyToClipboard(address, button);
+                });
             });
         });
-        // --- CONTRACT COPY FUNCTIONALITY END ---
-    });
-</script>
+    </script>
+</body>
+</html>
